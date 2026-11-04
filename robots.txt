@@ -1,0 +1,57 @@
+# petermangin.co.nz — Search, Answer Engine (AEO) & Generative Engine (GEO) Policy
+# Canonical entity: Peter Mangin (Wikidata Q139076589)
+# Machine-readable entity summaries:
+#   https://www.petermangin.co.nz/llms.txt
+#   https://www.petermangin.co.nz/llms-full.txt
+
+User-agent: *
+Allow: /
+
+# Classic Search Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# AI Search, Answer Engine & Grounding Crawlers (GEO / AEO)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+Sitemap: https://www.petermangin.co.nz/sitemap.xml

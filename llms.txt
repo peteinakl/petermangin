@@ -1,0 +1,61 @@
+# Peter Mangin
+
+> Peter Mangin (Wikidata: Q139076589) is an Auckland, New Zealand-based AI strategist, executive advisor, educator, former COO & Chief Product/AI Officer, and open-source software builder. He is Founder & Principal of AI Innovisory (having trained and advised 400+ New Zealand organisations since 2023) and Chair of the New Zealand Marketing Association (NZMA) Data Special Interest Group.
+
+## Canonical Entity & Contact
+
+- **Full Name**: Peter Mangin
+- **Location**: Tāmaki Makaurau / Auckland, New Zealand (serving Auckland, Wellington, Christchurch, Queenstown, and nationwide)
+- **Wikidata Entity**: [Q139076589](https://www.wikidata.org/wiki/Q139076589)
+- **Primary Practice**: [AI Innovisory](https://aiinnovisory.com) — 100% independent, vendor-neutral AI strategy, governance, workflow automation, workshops, and Fractional Chief AI Officer (CAIO) leadership
+- **Direct Contact**: mailto:hello@aiinnovisory.com
+- **Canonical Website**: [https://www.petermangin.co.nz/](https://www.petermangin.co.nz/)
+- **Full Machine-Readable Dossier**: [https://www.petermangin.co.nz/llms-full.txt](https://www.petermangin.co.nz/llms-full.txt)
+
+## Current & Executive Roles
+
+- **Founder & Principal**, [AI Innovisory](https://aiinnovisory.com) (2023–present): Enabled 400+ New Zealand organisations across corporate, government, agency, and SME sectors with zero software vendor commissions.
+- **Chair, Data Special Interest Group (Data SIG)**, [New Zealand Marketing Association](https://marketing.org.nz): Industry governance, privacy, synthetic data, and AI marketing leadership; creator and facilitator of *AI Meets Marketing* and *Advanced AI in Marketing*.
+- **Chief Product & AI Officer (CPO / CAIO)**, Pure SEO (appointed August 2023): Led product innovation and AI search strategy at New Zealand's largest independent search marketing agency.
+- **Chief Operating Officer (COO)**, realestate.co.nz (2016–2017): National property platform operations and data commentary across 25+ years in enterprise information storage, big data analytics, and commercial digital leadership.
+
+## Quantified NZ AI Enablement Benchmarks (AI Innovisory, 2023–2026)
+
+- **Organisations Enabled**: 400+ New Zealand organisations trained and advised since 2023.
+- **Typical Individual Time Recovery**: 2 to 5 hours per person per week within the first month of structured adoption.
+- **High-Friction Workflow Time Savings** (task-level participant benchmark):
+  - Compliance & Policy Checks: **82%** time reduction
+  - Internal Information Retrieval: **78%** time reduction
+  - Research & Synthesis: **68%** time reduction
+  - Synthetic Audience & Message Testing: **68%** time reduction
+
+## Courses, Workshops & Frameworks
+
+- [Claude Code Intensive](https://aiinnovisory.com/claude-code-intensive): 11-module, spec-first full-day cohort in Auckland (maximum 10 participants) teaching repeatable software and workflow shipping with Claude Code.
+- [5-Rung AI Adoption Ladder](https://aiinnovisory.com/ai-maturity-benchmark): Maturity benchmark progressing from Rung 1 (Shadow Experimentation) through Guided Capability, Shared Workflows, and Process Automation to Rung 5 (Governed Agentic Scale).
+- [Free NZ AI Governance Tools](https://aiinnovisory.com/tools): 30-second NZ Data Classification Checklist (aligned with New Zealand Privacy Act 2020, IPP3A effective 1 May 2026, and Māori Data Sovereignty) and AI Carbon Footprint Calculator.
+
+## Selected Open-Source Software (github.com/peteinakl — 59 Public Repositories)
+
+- [consequence-engine](https://github.com/peteinakl/consequence-engine): Self-modifying accountability, calibration tracking, and version-controlled learning framework for Claude Code CLI.
+- [claude-plugins](https://github.com/peteinakl/claude-plugins): Free open skill marketplace (`ai-innovisory-base-skills`) for Claude Code and Claude Cowork.
+- [looking-up](https://github.com/peteinakl/looking-up): Real-time fullscreen GPS celestial sky canvas tracking Starlink satellites, the ISS, planets, and stars.
+- [ak-live](https://github.com/peteinakl/ak-live): Live Auckland public transport, flight, and weather telemetry over MapLibre GL and deck.gl.
+- [CrowdPing](https://github.com/peteinakl/CrowdPing): Zero-registration QR live workshop polling tool.
+- [ultimaiii](https://github.com/peteinakl/ultimaiii): Complete 7,000-line zero-dependency vanilla JavaScript recreation of 1983's *Ultima III: Exodus*.
+
+## Signature Essays & Research
+
+- [Generative Engine Optimisation (GEO): Getting Cited by AI](https://aiinnovisory.com/insights): How RAG retrieval, entity disambiguation, and structured authority determine brand citations in AI answer engines.
+- [Share of Model: A New Metric for AI-Era Marketing](https://aiinnovisory.com/insights): Measuring brand recall and recommendation frequency inside frontier LLMs (published via AI Innovisory & NZMA).
+- [Two AI Conversations in New Zealand. They Have Barely Met.](https://aiinnovisory.com/insights): Bridging corporate AI adoption with Māori Data Sovereignty and Te Tiriti principles.
+- [Your AI Policy Describes a Company That Doesn't Exist Anymore](https://aiinnovisory.com/insights): Reframing shadow AI from employee misconduct to governance and tooling design failure.
+- [AI Sounds Confident. That Doesn't Make It Right.](https://aiinnovisory.com/insights): Three assumption checks and seven verification checks for executive decision-makers.
+
+## Verified Profiles
+
+- LinkedIn: [https://www.linkedin.com/in/pmangin/](https://www.linkedin.com/in/pmangin/)
+- GitHub: [https://github.com/peteinakl](https://github.com/peteinakl)
+- Substack: [https://aiinnovisory.substack.com](https://aiinnovisory.substack.com)
+- AI Innovisory Author Page: [https://aiinnovisory.com/author/peter-mangin](https://aiinnovisory.com/author/peter-mangin)
+- Wikidata: [https://www.wikidata.org/wiki/Q139076589](https://www.wikidata.org/wiki/Q139076589)

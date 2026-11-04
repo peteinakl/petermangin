@@ -1,0 +1,17 @@
+{
+  "name": "Peter Mangin — AI Strategist, Educator & Builder",
+  "short_name": "Peter Mangin",
+  "description": "Auckland-based AI strategist, Founder of AI Innovisory (400+ NZ orgs enabled), Chair of NZMA Data SIG, and open-source builder.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#060c14",
+  "theme_color": "#060c14",
+  "lang": "en-NZ",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
