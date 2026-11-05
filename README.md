@@ -6,10 +6,11 @@ Canonical personal website and machine-readable entity hub for **Peter Mangin** 
 
 Zero-build, zero-dependency static site designed for instant edge delivery on **Cloudflare Pages**:
 
-- `index.html` — Custom WebGL celestial/orbital GLSL fragment shader, editorial typography, 7-node `@graph` Schema.org JSON-LD, and AEO direct-answer FAQ.
+- `index.html` — Hand-coded Canvas 2D walkable map of Aotearoa, 7-node `@graph` Schema.org JSON-LD, and AEO direct-answer FAQ.
 - `llms.txt` & `llms-full.txt` — Machine-readable LLM / RAG entity grounding files (`llmstxt.org` spec).
 - `robots.txt` & `sitemap.xml` — Explicit crawl permissions for classic search and AI answer engines (`OAI-SearchBot`, `GPTBot`, `ClaudeBot`, `PerplexityBot`, `Googlebot`).
 - `og-image.png`, `favicon.svg`, `site.webmanifest` — Social unfurl and web app metadata.
+- `fonts/` — Self-hosted Familjen Grotesk variable subsets, with `OFL.txt` licence.
 - `_headers` — Cloudflare Pages HTTP response headers (UTF-8 macrons on `.txt`, security headers, and `Link` discovery headers).
 
 ## Local Preview

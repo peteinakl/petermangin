@@ -4,8 +4,8 @@
   "description": "Auckland-based AI strategist, Founder of AI Innovisory (400+ NZ orgs enabled), Chair of NZMA Data SIG, and open-source builder.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#060c14",
-  "theme_color": "#060c14",
+  "background_color": "#17153B",
+  "theme_color": "#17153B",
   "lang": "en-NZ",
   "icons": [
     {
