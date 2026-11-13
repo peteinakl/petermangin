@@ -366,7 +366,7 @@
   }
   </script>
 
-  <noscript><style>.world{display:none}</style></noscript>
+  <noscript><style>.world{display:none}:root{--dawn:.85}</style></noscript>
   <style>
     @font-face { font-family: "Familjen Grotesk"; font-style: italic; font-weight: 400 700; font-display: swap; src: url("/fonts/familjen-grotesk-latin-ext-italic.woff2") format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
     @font-face { font-family: "Familjen Grotesk"; font-style: italic; font-weight: 400 700; font-display: swap; src: url("/fonts/familjen-grotesk-latin-italic.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
@@ -395,6 +395,7 @@
       --page: 88rem;
       --edge: max(var(--gut), calc((100vw - var(--page)) / 2));
       color-scheme: dark;
+      --dawn: 0;
     }
 
     [data-hue="verm"]  { --h: var(--advisory);   --on: var(--night); }
@@ -420,6 +421,12 @@
     body::before {
       content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
       background: var(--night) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='900' fill='%23F6EBD5'%3E%3Ccircle cx='737' cy='78' r='0.93' fill-opacity='0.34'/%3E%3Ccircle cx='94' cy='435' r='0.71' fill-opacity='0.50'/%3E%3Ccircle cx='720' cy='702' r='1.06' fill-opacity='0.31'/%3E%3Ccircle cx='567' cy='665' r='0.86' fill-opacity='0.47'/%3E%3Ccircle cx='701' cy='481' r='0.49' fill-opacity='0.44'/%3E%3Ccircle cx='506' cy='771' r='0.54' fill-opacity='0.62'/%3E%3Ccircle cx='884' cy='571' r='0.98' fill-opacity='0.77'/%3E%3Ccircle cx='826' cy='658' r='0.69' fill-opacity='0.29'/%3E%3Ccircle cx='740' cy='538' r='0.78' fill-opacity='0.66'/%3E%3Ccircle cx='854' cy='713' r='0.95' fill-opacity='0.71'/%3E%3Ccircle cx='675' cy='72' r='0.83' fill-opacity='0.45'/%3E%3Ccircle cx='585' cy='765' r='0.73' fill-opacity='0.74'/%3E%3Ccircle cx='185' cy='415' r='1.25' fill-opacity='0.61'/%3E%3Ccircle cx='842' cy='695' r='1.14' fill-opacity='0.39'/%3E%3Ccircle cx='109' cy='184' r='0.45' fill-opacity='0.73'/%3E%3Ccircle cx='747' cy='8' r='0.91' fill-opacity='0.68'/%3E%3Ccircle cx='156' cy='560' r='1.02' fill-opacity='0.64'/%3E%3Ccircle cx='61' cy='47' r='0.52' fill-opacity='0.74'/%3E%3Ccircle cx='851' cy='476' r='0.95' fill-opacity='0.48'/%3E%3Ccircle cx='179' cy='866' r='0.97' fill-opacity='0.47'/%3E%3Ccircle cx='655' cy='420' r='1.21' fill-opacity='0.53'/%3E%3Ccircle cx='96' cy='756' r='1.06' fill-opacity='0.37'/%3E%3Ccircle cx='354' cy='321' r='1.15' fill-opacity='0.31'/%3E%3Ccircle cx='766' cy='627' r='1.14' fill-opacity='0.45'/%3E%3Ccircle cx='205' cy='380' r='0.73' fill-opacity='0.28'/%3E%3Ccircle cx='479' cy='299' r='1.20' fill-opacity='0.29'/%3E%3Ccircle cx='525' cy='93' r='1.16' fill-opacity='0.40'/%3E%3Ccircle cx='441' cy='736' r='0.97' fill-opacity='0.64'/%3E%3Ccircle cx='49' cy='349' r='0.69' fill-opacity='0.48'/%3E%3Ccircle cx='51' cy='295' r='0.73' fill-opacity='0.58'/%3E%3Ccircle cx='262' cy='360' r='0.81' fill-opacity='0.63'/%3E%3Ccircle cx='570' cy='836' r='1.18' fill-opacity='0.50'/%3E%3Ccircle cx='36' cy='499' r='0.78' fill-opacity='0.69'/%3E%3Ccircle cx='324' cy='535' r='1.13' fill-opacity='0.71'/%3E%3Ccircle cx='670' cy='448' r='0.93' fill-opacity='0.39'/%3E%3Ccircle cx='34' cy='546' r='0.75' fill-opacity='0.48'/%3E%3Ccircle cx='890' cy='215' r='0.57' fill-opacity='0.59'/%3E%3Ccircle cx='46' cy='82' r='0.48' fill-opacity='0.62'/%3E%3Ccircle cx='276' cy='287' r='1.21' fill-opacity='0.31'/%3E%3Ccircle cx='797' cy='457' r='0.91' fill-opacity='0.66'/%3E%3Ccircle cx='117' cy='317' r='0.71' fill-opacity='0.30'/%3E%3Ccircle cx='507' cy='529' r='0.81' fill-opacity='0.67'/%3E%3Ccircle cx='262' cy='436' r='0.67' fill-opacity='0.35'/%3E%3Ccircle cx='500' cy='820' r='0.61' fill-opacity='0.76'/%3E%3Ccircle cx='427' cy='28' r='1.21' fill-opacity='0.77'/%3E%3Ccircle cx='656' cy='882' r='0.95' fill-opacity='0.74'/%3E%3Ccircle cx='575' cy='237' r='1.22' fill-opacity='0.51'/%3E%3Ccircle cx='407' cy='212' r='0.81' fill-opacity='0.61'/%3E%3Ccircle cx='198' cy='9' r='0.56' fill-opacity='0.44'/%3E%3Ccircle cx='542' cy='372' r='0.65' fill-opacity='0.79'/%3E%3Ccircle cx='52' cy='674' r='1.16' fill-opacity='0.49'/%3E%3Ccircle cx='418' cy='255' r='0.99' fill-opacity='0.54'/%3E%3Ccircle cx='16' cy='165' r='1.02' fill-opacity='0.47'/%3E%3Ccircle cx='288' cy='623' r='0.79' fill-opacity='0.43'/%3E%3Ccircle cx='866' cy='884' r='0.87' fill-opacity='0.38'/%3E%3Ccircle cx='178' cy='10' r='0.82' fill-opacity='0.51'/%3E%3Ccircle cx='63' cy='579' r='1.01' fill-opacity='0.64'/%3E%3Ccircle cx='400' cy='731' r='1.18' fill-opacity='0.45'/%3E%3Ccircle cx='384' cy='79' r='0.88' fill-opacity='0.78'/%3E%3Ccircle cx='791' cy='259' r='0.48' fill-opacity='0.71'/%3E%3Ccircle cx='476' cy='732' r='1.03' fill-opacity='0.26'/%3E%3Ccircle cx='649' cy='533' r='1.01' fill-opacity='0.64'/%3E%3Ccircle cx='144' cy='214' r='1.08' fill-opacity='0.31'/%3E%3Ccircle cx='741' cy='508' r='1.13' fill-opacity='0.70'/%3E%3Ccircle cx='582' cy='346' r='0.77' fill-opacity='0.80'/%3E%3Ccircle cx='632' cy='380' r='1.04' fill-opacity='0.33'/%3E%3Ccircle cx='816' cy='27' r='0.56' fill-opacity='0.33'/%3E%3Ccircle cx='594' cy='706' r='0.60' fill-opacity='0.51'/%3E%3Ccircle cx='124' cy='276' r='0.64' fill-opacity='0.28'/%3E%3Ccircle cx='465' cy='192' r='0.70' fill-opacity='0.49'/%3E%3Ccircle cx='808' cy='125' r='0.49' fill-opacity='0.40'/%3E%3Ccircle cx='658' cy='597' r='0.97' fill-opacity='0.60'/%3E%3Ccircle cx='803' cy='272' r='0.71' fill-opacity='0.72'/%3E%3Ccircle cx='13' cy='426' r='0.83' fill-opacity='0.31'/%3E%3Ccircle cx='128' cy='663' r='0.53' fill-opacity='0.43'/%3E%3Ccircle cx='635' cy='67' r='1.03' fill-opacity='0.80'/%3E%3Ccircle cx='239' cy='71' r='0.67' fill-opacity='0.55'/%3E%3Ccircle cx='619' cy='140' r='1.08' fill-opacity='0.29'/%3E%3Ccircle cx='815' cy='840' r='1.11' fill-opacity='0.30'/%3E%3Ccircle cx='786' cy='246' r='1.21' fill-opacity='0.80'/%3E%3Ccircle cx='293' cy='814' r='0.53' fill-opacity='0.47'/%3E%3Ccircle cx='828' cy='613' r='1.04' fill-opacity='0.45'/%3E%3Ccircle cx='803' cy='229' r='0.71' fill-opacity='0.66'/%3E%3Ccircle cx='897' cy='278' r='0.75' fill-opacity='0.74'/%3E%3Ccircle cx='21' cy='113' r='0.71' fill-opacity='0.71'/%3E%3Ccircle cx='41' cy='263' r='0.60' fill-opacity='0.71'/%3E%3Ccircle cx='677' cy='590' r='0.87' fill-opacity='0.69'/%3E%3Ccircle cx='845' cy='631' r='0.71' fill-opacity='0.80'/%3E%3Ccircle cx='621' cy='881' r='0.92' fill-opacity='0.55'/%3E%3Ccircle cx='20' cy='343' r='0.88' fill-opacity='0.28'/%3E%3C/svg%3E") 0 0 / 900px 900px;
+    }
+    /* Night turns to dawn as the page ends: the hero has the moon, the contact section has the sun. */
+    body::after {
+      content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      opacity: var(--dawn);
+      background: linear-gradient(to top, rgba(255, 138, 101, 0.42) 0%, rgba(244, 143, 177, 0.26) 24%, rgba(127, 166, 255, 0.12) 52%, transparent 78%);
     }
     h1, h2, h3, h4, p, ul, ol, dl, dd, figure, blockquote { margin: 0; }
     ul, ol { padding: 0; list-style: none; }
@@ -937,7 +944,32 @@
     .motion .faq-item[open] p { animation: cardIn 0.4s var(--ease-out) both; }
 
     /* 10 Contact */
-    .contact { padding-bottom: clamp(3.5rem, 7vw, 5.5rem); }
+    .contact { padding-bottom: clamp(3.5rem, 7vw, 5.5rem); isolation: isolate; overflow: hidden; }
+    .contact::after {
+      content: ""; position: absolute; z-index: -1; right: 9%; bottom: 0;
+      width: clamp(11rem, 24vw, 22rem); aspect-ratio: 1; border-radius: 50%;
+      background: radial-gradient(circle at 50% 42%, #FFE2B0 0%, var(--amber) 40%, var(--advisory) 78%);
+      box-shadow: 0 0 90px 24px rgba(255, 182, 92, 0.32);
+      transform: translateY(calc(96% - var(--dawn) * 46%));
+      opacity: calc(0.2 + var(--dawn) * 0.8);
+    }
+    .contact__lead { font-size: clamp(1.15rem, 1rem + 0.5vw, 1.4rem); color: var(--moon-soft); margin-bottom: 0.6rem; }
+    .doors {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.9rem;
+      margin-top: clamp(2rem, 4vw, 3rem); max-width: 68rem;
+    }
+    .door {
+      display: grid; gap: 0.55rem; align-content: start; height: 100%;
+      padding: 1.3rem 1.4rem 1.2rem; border-radius: 14px; text-decoration: none;
+      background: var(--lamp-card); box-shadow: inset 0 0 0 1.5px var(--hair);
+      transition: transform 0.4s var(--ease-pop), box-shadow 0.25s;
+    }
+    .door:hover, .door:focus-visible { transform: translateY(-5px); box-shadow: inset 0 0 0 2px var(--h), 0 18px 40px -18px var(--h); }
+    .door__who { font: 700 clamp(1.25rem, 1.1rem + 0.6vw, 1.6rem)/1.1 var(--font); letter-spacing: -0.02em; color: var(--h); }
+    .door__what { color: var(--moon-soft); line-height: 1.4; }
+    .door__go { font-weight: 700; margin-top: 0.35rem; }
+    .door__go span { display: inline-block; transition: transform 0.35s var(--ease-out); }
+    .door:hover .door__go span { transform: translateX(5px); }
     .contact__mail {
       display: block; width: fit-content; max-width: 100%; overflow-wrap: anywhere;
       font: 700 clamp(1.8rem, 0.5rem + 5.6vw, 6.4rem)/1.05 var(--font); letter-spacing: -0.04em;
@@ -948,6 +980,7 @@
     .contact__mail:hover { color: var(--night); background-size: 100% 100%; }
     .contact__links { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2.25rem; }
     .contact__links a {
+      background: rgba(23, 21, 59, 0.55);
       display: inline-flex; align-items: center; min-height: 2.9rem; padding: 0 1.25rem;
       box-shadow: inset 0 0 0 2px var(--moon); border-radius: 999px; font-weight: 700; text-decoration: none;
       transition: background-color 0.2s, color 0.2s, transform 0.35s var(--ease-pop);
@@ -955,9 +988,12 @@
     .contact__links a:hover { background: var(--moon); color: var(--night); transform: translateY(-3px); }
 
     .foot {
+      background: #100F2E;
       padding: 1.5rem var(--edge) 2.2rem; color: var(--moon-soft); border-top: 1px solid var(--hair);
       display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.8rem 2rem; font-size: 0.92rem;
     }
+    .foot__machine { font-size: 0.82rem; }
+    .foot__machine a { text-decoration-color: var(--hair); }
     .foot__key { display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; font-size: 0.82rem; }
     .foot__key span { display: inline-flex; align-items: center; gap: 0.4rem; }
     .foot__key span::before { content: ""; width: 0.6rem; height: 0.6rem; border-radius: 50%; background: var(--h); }
@@ -993,6 +1029,7 @@
       .metric-bar { grid-template-columns: 1fr auto; gap: 0.35rem 1rem; }
       .metric-bar__track { grid-column: 1 / -1; grid-row: 2; }
       .stats { grid-template-columns: repeat(2, 1fr); }
+      .doors { grid-template-columns: 1fr; }
       .bar__nav { display: none; }
       .bar { justify-content: space-between; }
     }
@@ -1034,12 +1071,12 @@
   <header class="bar" data-bar>
     <a class="bar__mark" href="#top" aria-label="Peter Mangin, back to top">PM</a>
     <nav class="bar__nav" aria-label="Sections">
+      <a href="#about">About</a>
       <a href="#work">Work</a>
       <a href="#innovisory">Innovisory</a>
       <a href="#proof">Proof</a>
       <a href="#stage">Rooms</a>
       <a href="#code">Code</a>
-      <a href="#lineage">GEO</a>
       <a href="#faq">FAQ</a>
     </nav>
     <a class="bar__cta" href="#contact">Contact</a>
@@ -1060,7 +1097,7 @@
           <span class="name__word" aria-hidden="true"><span class="name__l" style="--i:0">P</span><span class="name__l" style="--i:1">e</span><span class="name__l" style="--i:2">t</span><span class="name__l" style="--i:3">e</span><span class="name__l" style="--i:4">r</span></span>
           <span class="name__word" aria-hidden="true"><span class="name__l" style="--i:5">M</span><span class="name__l" style="--i:6">a</span><span class="name__l" style="--i:7">n</span><span class="name__l" style="--i:8">g</span><span class="name__l" style="--i:9">i</span><span class="name__l" style="--i:10">n</span></span>
         </h1>
-        <p class="lede">Executive AI strategist. Educator to 400+ NZ organisations. Builder after dark.</p>
+        <p class="lede">I turn AI into measurable workflows teams actually use. Advisor and educator to 400+ New Zealand organisations. Builder after dark.</p>
         <p class="ctas">
           <a class="btn btn--cyan" href="#contact">Start a conversation</a>
           <a class="btn btn--line" href="#work">All the work</a>
@@ -1143,7 +1180,7 @@
           <li data-hue="sun"><span class="legend__sw"></span>Stage &amp; Courses</li>
           <li data-hue="cyan"><span class="legend__sw"></span>Code &amp; Agents</li>
           <li data-hue="coral"><span class="legend__sw"></span>Writing &amp; Policy</li>
-          <li data-hue="paper"><span class="legend__sw"></span>Lineage &amp; GEO</li>
+          <li data-hue="paper"><span class="legend__sw"></span>Career arc</li>
         </ul>
       </section>
     </section>
@@ -1545,71 +1582,10 @@
       </div>
     </section>
 
-    <!-- ── 07 / FULL-BLEED PAPER BAND: LINEAGE & GEO ENTITY ────────── -->
-    <section class="sec lineage" id="lineage" data-sec="07 / Lineage & GEO" data-hue="paper">
+    <!-- ── 07 / DIRECT ANSWERS (AEO FAQ) ───────────────────────────── -->
+    <section class="sec" id="faq" data-sec="07 / Direct Answers" data-hue="sun">
       <header class="sh">
-        <p class="sh__code mono"><span>07</span> Lineage &amp; Entity</p>
-        <h2 class="sh__h">Practising what I teach</h2>
-      </header>
-
-      <div class="lineage__grid">
-        <div>
-          <p class="lineage__lead">In an Answer Engine world, blue links fade and verified entities win. This site anchors 25 years of New Zealand executive, educational, and open-source work in a single machine-readable graph.</p>
-          <p class="entity-brief" id="entity-brief"><strong>Canonical Entity Summary:</strong> Peter Mangin (<code>Wikidata Q139076589</code>) is an Auckland, New Zealand-based AI strategist, educator, former COO of <strong>realestate.co.nz</strong> and Chief Product &amp; AI Officer at <strong>Pure SEO</strong>, Founder of <strong>AI Innovisory</strong> (400+ NZ organisations enabled since 2023), and Chair of the <strong>New Zealand Marketing Association Data SIG</strong>.</p>
-        </div>
-        <article class="brut-card">
-          <p class="brut-card__eyebrow">Canonical Person Entity · Wikidata Q139076589</p>
-          <h3>Verified Graph Root</h3>
-          <p>Explicitly reconciles <strong>AI Innovisory</strong>, <strong>NZ Marketing Association</strong> courses, executive roles at <strong>realestate.co.nz</strong> and <strong>Pure SEO</strong>, <strong>Substack</strong>, and <strong>github.com/peteinakl</strong> via connected <code>@graph</code> JSON-LD and dedicated LLM grounding endpoints.</p>
-          <nav class="geo-pills" aria-label="Machine-readable entity endpoints">
-            <a class="geo-pill" href="https://www.wikidata.org/wiki/Q139076589" target="_blank" rel="noopener">Wikidata Q139076589 ↗</a>
-            <a class="geo-pill" href="/llms.txt" target="_blank">llms.txt ↗</a>
-            <a class="geo-pill" href="/llms-full.txt" target="_blank">llms-full.txt ↗</a>
-            <a class="geo-pill" href="/robots.txt" target="_blank">robots.txt ↗</a>
-            <a class="geo-pill" href="/sitemap.xml" target="_blank">sitemap.xml ↗</a>
-          </nav>
-          <details class="graph-drawer">
-            <summary>Connected Schema.org @graph Architecture</summary>
-            <div class="graph-nodes">
-              <span><b>#person</b> → Peter Mangin (sameAs: Q139076589, LinkedIn, GitHub, Substack)</span>
-              <span><b>#ai-innovisory</b> → ProfessionalService (400+ NZ orgs, 100% vendor-neutral)</span>
-              <span><b>#webpage</b> → ProfilePage + SpeakableSpecification (#about-lead, #entity-brief, #faq)</span>
-              <span><b>#featured-work</b> → Course + SoftwareSourceCode + Article ItemList</span>
-              <span><b>#faq-schema</b> → FAQPage (6 atomic Answer Engine passages)</span>
-            </div>
-          </details>
-        </article>
-      </div>
-    </section>
-
-    <!-- ── 08 / TOOLKIT & MILESTONES ───────────────────────────────── -->
-    <section class="sec" id="toolkit" data-sec="08 / Capabilities" data-hue="cyan">
-      <header class="sh">
-        <p class="sh__code mono"><span>08</span> Capabilities</p>
-        <h2 class="sh__h">Capabilities &amp; milestones</h2>
-      </header>
-
-      <div class="kit__grid">
-        <dl class="skills">
-          <div class="skills__row"><dt class="mono">AI &amp; Agentic</dt><dd><span class="skill">Claude Code</span><span class="skill">Claude Cowork</span><span class="skill">Spec-driven workflows</span><span class="skill">Multi-agent calibration</span><span class="skill">ChatGPT Enterprise</span><span class="skill">Microsoft Copilot</span></dd></div>
-          <div class="skills__row"><dt class="mono">Governance &amp; Law</dt><dd><span class="skill">NZ Privacy Act 2020</span><span class="skill">IPP3A (May 2026)</span><span class="skill">Māori Data Sovereignty</span><span class="skill">6-Level Data Classification</span><span class="skill">Shadow AI Remediation</span></dd></div>
-          <div class="skills__row"><dt class="mono">Marketing &amp; Search</dt><dd><span class="skill">Generative Engine Optimisation (GEO)</span><span class="skill">Answer Engine Optimisation (AEO)</span><span class="skill">Share of Model</span><span class="skill">Synthetic Audience Testing</span></dd></div>
-          <div class="skills__row"><dt class="mono">Code &amp; Data</dt><dd><span class="skill">Python</span><span class="skill">TypeScript</span><span class="skill">Astro</span><span class="skill">Vanilla JS</span><span class="skill">MapLibre GL &amp; deck.gl</span><span class="skill">Big Data &amp; Storage</span></dd></div>
-        </dl>
-
-        <ul class="medals">
-          <li class="medal" data-hue="verm"><strong>400+ NZ Orgs</strong> Hands-on AI enablement delivered since 2023</li>
-          <li class="medal" data-hue="sun"><strong>Chair, Data SIG</strong> New Zealand Marketing Association</li>
-          <li class="medal" data-hue="paper"><strong>COO &amp; CPO/CAIO</strong> Executive roles at realestate.co.nz &amp; Pure SEO</li>
-          <li class="medal" data-hue="cyan"><strong>59 Public Repos</strong> Shipping open tools from 2018 CNNs to 2026 agent frameworks</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ── 09 / DIRECT ANSWERS (AEO FAQ) ───────────────────────────── -->
-    <section class="sec" id="faq" data-sec="09 / Direct Answers" data-hue="sun">
-      <header class="sh">
-        <p class="sh__code mono"><span>09</span> Direct Answers</p>
+        <p class="sh__code mono"><span>07</span> Direct Answers</p>
         <h2 class="sh__h">Common questions, answered straight</h2>
       </header>
 
@@ -1641,14 +1617,33 @@
       </div>
     </section>
 
-    <!-- ── 10 / FULL-BLEED CYAN CONTACT FINALE ─────────────────────── -->
-    <section class="sec contact" id="contact" data-sec="10 / Contact" data-hue="cyan">
+    <!-- ── 08 / CONTACT: THREE DOORS AT DAWN ───────────────────────── -->
+    <section class="sec contact" id="contact" data-sec="08 / Contact" data-hue="sun">
       <header class="sh">
-        <p class="sh__code mono"><span>10</span> Contact</p>
+        <p class="sh__code mono"><span>08</span> Contact</p>
         <h2 class="sh__h">Start a conversation</h2>
       </header>
 
+      <p class="contact__lead">Pick the door that fits, or just write.</p>
       <a class="contact__mail" href="mailto:hello@aiinnovisory.com">hello@aiinnovisory.com</a>
+
+      <ul class="doors">
+        <li><a class="door" data-hue="verm" href="mailto:hello@aiinnovisory.com?subject=Leadership%20AI%20conversation">
+          <span class="door__who">Boards &amp; leadership teams</span>
+          <span class="door__what">A 90-day roadmap, a governance review, or a fractional Chief AI Officer.</span>
+          <span class="door__go">Talk strategy <span aria-hidden="true">→</span></span>
+        </a></li>
+        <li><a class="door" data-hue="sun" href="mailto:hello@aiinnovisory.com?subject=Team%20workshop%20enquiry">
+          <span class="door__who">Teams</span>
+          <span class="door__what">Hands-on workshops, on-site across Aotearoa, built around your own work.</span>
+          <span class="door__go">Plan a workshop <span aria-hidden="true">→</span></span>
+        </a></li>
+        <li><a class="door" data-hue="cyan" href="mailto:hello@aiinnovisory.com?subject=Speaking%20enquiry">
+          <span class="door__who">Event organisers</span>
+          <span class="door__what">Keynotes and panels on practical, governed AI adoption.</span>
+          <span class="door__go">Book a speaker <span aria-hidden="true">→</span></span>
+        </a></li>
+      </ul>
 
       <ul class="contact__links">
         <li><a href="https://www.linkedin.com/in/pmangin/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -1661,12 +1656,13 @@
 
   <footer class="foot">
     <p>© 2026 Peter Mangin. Built in Tāmaki Makaurau, Aotearoa.</p>
+    <p class="foot__machine">For machines: <a href="/llms.txt">llms.txt</a> · <a href="/llms-full.txt">llms-full.txt</a> · <a href="https://www.wikidata.org/wiki/Q139076589" target="_blank" rel="noopener">Wikidata</a> · <a href="/sitemap.xml">sitemap</a></p>
     <p class="foot__key mono" aria-hidden="true">
       <span data-hue="verm">Advisory &amp; Exec</span>
       <span data-hue="sun">Stage &amp; Courses</span>
       <span data-hue="cyan">Code &amp; Agents</span>
       <span data-hue="coral">Writing &amp; Policy</span>
-      <span data-hue="paper">Lineage &amp; GEO</span>
+      <span data-hue="paper">Career arc</span>
     </p>
   </footer>
 
@@ -2170,6 +2166,18 @@ return {goTo(i){const[x,y]=CARDS[i].at;go(x,y)},setActive(i){active=i;dirty=true
       });
     }, { rootMargin: "-45% 0px -52% 0px" });
     document.querySelectorAll("[data-sec]").forEach(s => secObs.observe(s));
+
+    // Dawn: the last 40% of the page lifts from night to first light.
+    let dawnQueued = false;
+    const setDawn = () => {
+      dawnQueued = false;
+      const max = document.documentElement.scrollHeight - innerHeight;
+      const p = max > 0 ? scrollY / max : 0;
+      document.documentElement.style.setProperty("--dawn", clamp((p - 0.6) / 0.4).toFixed(3));
+    };
+    addEventListener("scroll", () => { if (!dawnQueued) { dawnQueued = true; requestAnimationFrame(setDawn); } }, { passive: true });
+    addEventListener("resize", setDawn);
+    setDawn();
   </script>
 </body>
 </html>
