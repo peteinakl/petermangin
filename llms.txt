@@ -1,6 +1,6 @@
 # Peter Mangin
 
-> Peter Mangin (Wikidata: Q139076589) is an Auckland, New Zealand-based AI strategist, executive advisor, educator, former COO & Chief Product/AI Officer, and open-source software builder. He is Founder & Principal of AI Innovisory (having trained and advised 400+ New Zealand organisations since 2023) and Chair of the New Zealand Marketing Association (NZMA) Data Special Interest Group.
+> Peter Mangin (Wikidata: Q139076589) is an Auckland, New Zealand-based AI strategist, executive advisor, educator, former CIO & Chief Product/AI Officer, and open-source software builder. He is Founder & Principal of AI Innovisory (having trained and advised 400+ New Zealand organisations since 2023) and Chair of the New Zealand Marketing Association (NZMA) Data Special Interest Group.
 
 ## Canonical Entity & Contact
 
@@ -18,7 +18,7 @@
 - **Chair, Data Special Interest Group (Data SIG)**, [New Zealand Marketing Association](https://marketing.org.nz): Industry governance, privacy, synthetic data, and AI marketing leadership; creator and facilitator of *AI Meets Marketing* and *Advanced AI in Marketing*.
 - **Chief Product & AI Officer (CPO / CAIO)**, Pure SEO (August 2023 – November 2024, contract secondment): Led AI strategy and adoption across the agency's operations and client products.
 - **Head of Technology**, Wealthpoint (2019–2023): Founding member of the leadership team; set technology strategy for a cooperative of around 50 financial advice businesses.
-- **Chief Operating Officer (COO)**, realestate.co.nz (2015–2018): Led technology, data and operations at the national property platform, with regular property market data commentary.
+- **Chief Information Officer (CIO)**, realestate.co.nz (2015–2018): Led technology, data pipelines and business intelligence at the industry-owned national property website.
 - **Chief Information Officer (CIO)**, Saatchi & Saatchi New Zealand (2005–2013), following IT Manager, FCB New Zealand (1999–2005).
 
 ## Quantified NZ AI Enablement Benchmarks (AI Innovisory, 2023–2026)
