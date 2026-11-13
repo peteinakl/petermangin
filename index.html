@@ -366,7 +366,7 @@
   }
   </script>
 
-  <noscript><style>.world{display:none}:root{--dawn:.85}</style></noscript>
+  <noscript><style>.world{display:none}:root{--dawn:.85;--sky:.6}</style></noscript>
   <style>
     @font-face { font-family: "Familjen Grotesk"; font-style: italic; font-weight: 400 700; font-display: swap; src: url("/fonts/familjen-grotesk-latin-ext-italic.woff2") format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
     @font-face { font-family: "Familjen Grotesk"; font-style: italic; font-weight: 400 700; font-display: swap; src: url("/fonts/familjen-grotesk-latin-italic.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
@@ -396,6 +396,7 @@
       --edge: max(var(--gut), calc((100vw - var(--page)) / 2));
       color-scheme: dark;
       --dawn: 0;
+      --sky: 0;
     }
 
     [data-hue="verm"]  { --h: var(--advisory);   --on: var(--night); }
@@ -420,7 +421,9 @@
     }
     body::before {
       content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background-color: var(--night);
       background: var(--night) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='900' fill='%23F6EBD5'%3E%3Ccircle cx='737' cy='78' r='0.93' fill-opacity='0.34'/%3E%3Ccircle cx='94' cy='435' r='0.71' fill-opacity='0.50'/%3E%3Ccircle cx='720' cy='702' r='1.06' fill-opacity='0.31'/%3E%3Ccircle cx='567' cy='665' r='0.86' fill-opacity='0.47'/%3E%3Ccircle cx='701' cy='481' r='0.49' fill-opacity='0.44'/%3E%3Ccircle cx='506' cy='771' r='0.54' fill-opacity='0.62'/%3E%3Ccircle cx='884' cy='571' r='0.98' fill-opacity='0.77'/%3E%3Ccircle cx='826' cy='658' r='0.69' fill-opacity='0.29'/%3E%3Ccircle cx='740' cy='538' r='0.78' fill-opacity='0.66'/%3E%3Ccircle cx='854' cy='713' r='0.95' fill-opacity='0.71'/%3E%3Ccircle cx='675' cy='72' r='0.83' fill-opacity='0.45'/%3E%3Ccircle cx='585' cy='765' r='0.73' fill-opacity='0.74'/%3E%3Ccircle cx='185' cy='415' r='1.25' fill-opacity='0.61'/%3E%3Ccircle cx='842' cy='695' r='1.14' fill-opacity='0.39'/%3E%3Ccircle cx='109' cy='184' r='0.45' fill-opacity='0.73'/%3E%3Ccircle cx='747' cy='8' r='0.91' fill-opacity='0.68'/%3E%3Ccircle cx='156' cy='560' r='1.02' fill-opacity='0.64'/%3E%3Ccircle cx='61' cy='47' r='0.52' fill-opacity='0.74'/%3E%3Ccircle cx='851' cy='476' r='0.95' fill-opacity='0.48'/%3E%3Ccircle cx='179' cy='866' r='0.97' fill-opacity='0.47'/%3E%3Ccircle cx='655' cy='420' r='1.21' fill-opacity='0.53'/%3E%3Ccircle cx='96' cy='756' r='1.06' fill-opacity='0.37'/%3E%3Ccircle cx='354' cy='321' r='1.15' fill-opacity='0.31'/%3E%3Ccircle cx='766' cy='627' r='1.14' fill-opacity='0.45'/%3E%3Ccircle cx='205' cy='380' r='0.73' fill-opacity='0.28'/%3E%3Ccircle cx='479' cy='299' r='1.20' fill-opacity='0.29'/%3E%3Ccircle cx='525' cy='93' r='1.16' fill-opacity='0.40'/%3E%3Ccircle cx='441' cy='736' r='0.97' fill-opacity='0.64'/%3E%3Ccircle cx='49' cy='349' r='0.69' fill-opacity='0.48'/%3E%3Ccircle cx='51' cy='295' r='0.73' fill-opacity='0.58'/%3E%3Ccircle cx='262' cy='360' r='0.81' fill-opacity='0.63'/%3E%3Ccircle cx='570' cy='836' r='1.18' fill-opacity='0.50'/%3E%3Ccircle cx='36' cy='499' r='0.78' fill-opacity='0.69'/%3E%3Ccircle cx='324' cy='535' r='1.13' fill-opacity='0.71'/%3E%3Ccircle cx='670' cy='448' r='0.93' fill-opacity='0.39'/%3E%3Ccircle cx='34' cy='546' r='0.75' fill-opacity='0.48'/%3E%3Ccircle cx='890' cy='215' r='0.57' fill-opacity='0.59'/%3E%3Ccircle cx='46' cy='82' r='0.48' fill-opacity='0.62'/%3E%3Ccircle cx='276' cy='287' r='1.21' fill-opacity='0.31'/%3E%3Ccircle cx='797' cy='457' r='0.91' fill-opacity='0.66'/%3E%3Ccircle cx='117' cy='317' r='0.71' fill-opacity='0.30'/%3E%3Ccircle cx='507' cy='529' r='0.81' fill-opacity='0.67'/%3E%3Ccircle cx='262' cy='436' r='0.67' fill-opacity='0.35'/%3E%3Ccircle cx='500' cy='820' r='0.61' fill-opacity='0.76'/%3E%3Ccircle cx='427' cy='28' r='1.21' fill-opacity='0.77'/%3E%3Ccircle cx='656' cy='882' r='0.95' fill-opacity='0.74'/%3E%3Ccircle cx='575' cy='237' r='1.22' fill-opacity='0.51'/%3E%3Ccircle cx='407' cy='212' r='0.81' fill-opacity='0.61'/%3E%3Ccircle cx='198' cy='9' r='0.56' fill-opacity='0.44'/%3E%3Ccircle cx='542' cy='372' r='0.65' fill-opacity='0.79'/%3E%3Ccircle cx='52' cy='674' r='1.16' fill-opacity='0.49'/%3E%3Ccircle cx='418' cy='255' r='0.99' fill-opacity='0.54'/%3E%3Ccircle cx='16' cy='165' r='1.02' fill-opacity='0.47'/%3E%3Ccircle cx='288' cy='623' r='0.79' fill-opacity='0.43'/%3E%3Ccircle cx='866' cy='884' r='0.87' fill-opacity='0.38'/%3E%3Ccircle cx='178' cy='10' r='0.82' fill-opacity='0.51'/%3E%3Ccircle cx='63' cy='579' r='1.01' fill-opacity='0.64'/%3E%3Ccircle cx='400' cy='731' r='1.18' fill-opacity='0.45'/%3E%3Ccircle cx='384' cy='79' r='0.88' fill-opacity='0.78'/%3E%3Ccircle cx='791' cy='259' r='0.48' fill-opacity='0.71'/%3E%3Ccircle cx='476' cy='732' r='1.03' fill-opacity='0.26'/%3E%3Ccircle cx='649' cy='533' r='1.01' fill-opacity='0.64'/%3E%3Ccircle cx='144' cy='214' r='1.08' fill-opacity='0.31'/%3E%3Ccircle cx='741' cy='508' r='1.13' fill-opacity='0.70'/%3E%3Ccircle cx='582' cy='346' r='0.77' fill-opacity='0.80'/%3E%3Ccircle cx='632' cy='380' r='1.04' fill-opacity='0.33'/%3E%3Ccircle cx='816' cy='27' r='0.56' fill-opacity='0.33'/%3E%3Ccircle cx='594' cy='706' r='0.60' fill-opacity='0.51'/%3E%3Ccircle cx='124' cy='276' r='0.64' fill-opacity='0.28'/%3E%3Ccircle cx='465' cy='192' r='0.70' fill-opacity='0.49'/%3E%3Ccircle cx='808' cy='125' r='0.49' fill-opacity='0.40'/%3E%3Ccircle cx='658' cy='597' r='0.97' fill-opacity='0.60'/%3E%3Ccircle cx='803' cy='272' r='0.71' fill-opacity='0.72'/%3E%3Ccircle cx='13' cy='426' r='0.83' fill-opacity='0.31'/%3E%3Ccircle cx='128' cy='663' r='0.53' fill-opacity='0.43'/%3E%3Ccircle cx='635' cy='67' r='1.03' fill-opacity='0.80'/%3E%3Ccircle cx='239' cy='71' r='0.67' fill-opacity='0.55'/%3E%3Ccircle cx='619' cy='140' r='1.08' fill-opacity='0.29'/%3E%3Ccircle cx='815' cy='840' r='1.11' fill-opacity='0.30'/%3E%3Ccircle cx='786' cy='246' r='1.21' fill-opacity='0.80'/%3E%3Ccircle cx='293' cy='814' r='0.53' fill-opacity='0.47'/%3E%3Ccircle cx='828' cy='613' r='1.04' fill-opacity='0.45'/%3E%3Ccircle cx='803' cy='229' r='0.71' fill-opacity='0.66'/%3E%3Ccircle cx='897' cy='278' r='0.75' fill-opacity='0.74'/%3E%3Ccircle cx='21' cy='113' r='0.71' fill-opacity='0.71'/%3E%3Ccircle cx='41' cy='263' r='0.60' fill-opacity='0.71'/%3E%3Ccircle cx='677' cy='590' r='0.87' fill-opacity='0.69'/%3E%3Ccircle cx='845' cy='631' r='0.71' fill-opacity='0.80'/%3E%3Ccircle cx='621' cy='881' r='0.92' fill-opacity='0.55'/%3E%3Ccircle cx='20' cy='343' r='0.88' fill-opacity='0.28'/%3E%3C/svg%3E") 0 0 / 900px 900px;
+      background-color: color-mix(in oklab, var(--night), #2D1F60 calc(var(--sky) * 100%));
     }
     /* Night turns to dawn as the page ends: the hero has the moon, the contact section has the sun. */
     body::after {
@@ -616,7 +619,7 @@
 
     /* Section shell */
     .sec { position: relative; padding: clamp(4rem, 7vw, 6.5rem) var(--edge); }
-    .sh { position: relative; margin-bottom: clamp(2rem, 4vw, 3.25rem); padding-right: clamp(0px, 22vw, 20rem); }
+    .sh { position: relative; margin-bottom: clamp(2rem, 4vw, 3.25rem); padding-right: clamp(0px, 25vw, 23rem); min-height: clamp(0rem, 14vw, 13rem); }
     .sh__code {
       display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.8rem;
       font-size: 1.02rem; font-weight: 600; color: var(--moon-soft);
@@ -627,8 +630,12 @@
       letter-spacing: -0.035em; text-wrap: balance; max-width: 17ch;
     }
     .lm {
-      position: absolute; right: var(--edge); top: clamp(1.5rem, 4vw, 3.25rem); z-index: 0;
-      width: clamp(150px, 20vw, 300px); aspect-ratio: 5 / 4; pointer-events: none;
+      position: absolute; right: var(--edge); top: clamp(1rem, 2.5vw, 2rem); z-index: 0;
+      width: clamp(170px, 23vw, 340px); aspect-ratio: 5 / 4; pointer-events: none;
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .lm { animation: bob 8s ease-in-out infinite; }
+      @keyframes bob { 50% { transform: translateY(-9px); } }
     }
 
     /* 01 The Arc */
@@ -845,11 +852,46 @@
     .press__quote blockquote { font: 500 clamp(1.2rem, 1.05rem + 0.5vw, 1.45rem)/1.32 var(--font); letter-spacing: -0.01em; }
     .press__quote figcaption { margin-top: 0.55rem; font-size: 0.92rem; font-weight: 600; color: var(--amber); }
 
+    /* Moon band: one light section mid-page */
+    .moonband {
+      position: relative; isolation: isolate; overflow: hidden;
+      background: var(--moon); color: var(--night);
+      padding: clamp(4.5rem, 9vw, 8.5rem) var(--edge) clamp(3.5rem, 7vw, 6rem);
+    }
+    .moonband::before {
+      content: ""; position: absolute; z-index: -1; right: -7vw; top: -9vw;
+      width: clamp(16rem, 38vw, 34rem); aspect-ratio: 1; border-radius: 50%;
+      background: #EBDDBF;
+      box-shadow: 0 0 0 clamp(18px, 3vw, 44px) rgba(235, 221, 191, 0.55);
+    }
+    .moonband__fig { position: relative; max-width: 62rem; }
+    .moonband__mark {
+      display: block; height: 0.42em; margin-bottom: 0.2em;
+      font: 700 clamp(7rem, 15vw, 13rem)/1 var(--font); color: var(--advisory);
+    }
+    .moonband blockquote p {
+      font: 500 clamp(1.6rem, 0.9rem + 2.7vw, 3.3rem)/1.14 var(--font);
+      letter-spacing: -0.028em; text-wrap: balance;
+    }
+    .moonband figcaption { margin-top: clamp(1.4rem, 3vw, 2.2rem); display: grid; gap: 0.15rem; font-size: 1.05rem; }
+    .moonband figcaption strong { font-size: 1.25rem; }
+    .moonband figcaption span { color: var(--ink-soft); }
+    .moonband__where {
+      margin-top: clamp(2.2rem, 5vw, 3.5rem); padding-top: 1.1rem; border-top: 1.5px solid rgba(23, 21, 59, 0.25);
+      display: flex; flex-wrap: wrap; gap: 0.3rem 1.2rem; color: var(--ink-soft);
+    }
+    .moonband__where strong { color: var(--night); }
+
     /* 06 Code & Writing */
     .code__grid {
       display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 3rem clamp(2rem, 6vw, 6rem);
+      gap: 1.2rem; align-items: start;
     }
+    .code__grid > * {
+      background: var(--lamp-card); border-radius: 16px; box-shadow: inset 0 0 0 1.5px var(--hair);
+      padding: clamp(1.2rem, 2.4vw, 2rem) clamp(1.2rem, 2.6vw, 2.2rem) clamp(0.6rem, 1.4vw, 1.2rem);
+    }
+    .code__grid li:last-child { border-bottom: 0; }
     .code__h { color: var(--periwinkle); font: 600 1rem/1.25 var(--font); padding-bottom: 0.7rem; border-bottom: 1.5px solid var(--periwinkle); margin-bottom: 0.4rem; }
     .code__h--coral { color: var(--rose); border-bottom-color: var(--rose); }
     .repo {
@@ -947,10 +989,10 @@
     .contact { padding-bottom: clamp(3.5rem, 7vw, 5.5rem); isolation: isolate; overflow: hidden; }
     .contact::after {
       content: ""; position: absolute; z-index: -1; right: 9%; bottom: 0;
-      width: clamp(11rem, 24vw, 22rem); aspect-ratio: 1; border-radius: 50%;
-      background: radial-gradient(circle at 50% 42%, #FFE2B0 0%, var(--amber) 40%, var(--advisory) 78%);
-      box-shadow: 0 0 90px 24px rgba(255, 182, 92, 0.32);
-      transform: translateY(calc(96% - var(--dawn) * 46%));
+      width: clamp(10rem, 22vw, 20rem); aspect-ratio: 1; border-radius: 50%;
+      background: var(--amber);
+      box-shadow: 0 0 0 clamp(14px, 2vw, 26px) rgba(255, 182, 92, 0.16), 0 0 0 clamp(34px, 5vw, 64px) rgba(255, 182, 92, 0.08), 0 0 140px 50px rgba(255, 138, 101, 0.3);
+      transform: translateY(calc(98% - var(--dawn) * 50%));
       opacity: calc(0.2 + var(--dawn) * 0.8);
     }
     .contact__lead { font-size: clamp(1.15rem, 1rem + 0.5vw, 1.4rem); color: var(--moon-soft); margin-bottom: 0.6rem; }
@@ -1050,8 +1092,8 @@
       .legend { position: static; padding: 0.9rem var(--gut) 0; }
     }
     @media (max-width: 700px) {
-      .lm { display: none; }
-      .sh { padding-right: 0; }
+      .lm { position: static; display: block; width: 9.5rem; margin: -1.5rem 0 0.6rem -0.6rem; }
+      .sh { padding-right: 0; min-height: 0; }
     }
     @media (max-width: 600px) {
       .bento, .rungs-cards, .skills__row { grid-template-columns: 1fr; }
@@ -1500,19 +1542,18 @@
           <p class="talk__kind">Panellist with NZBusiness Magazine on practical SME &amp; executive adoption</p>
         </li>
       </ol>
+    </section>
 
-      <div class="press">
-        <figure class="press__quote">
-          <blockquote>
-            <p>“Peter is fantastic … We had Peter in for a one-day workshop, and it’s fair to say minds were blown (in the best possible way). … Importantly, Peter is completely independent and technology-neutral — no sales pitch, just clear, practical insight.”</p>
-          </blockquote>
-          <figcaption class="mono">James Lee — CEO, FIX Eyewear &amp; MD, Beautyspot</figcaption>
-        </figure>
-        <div>
-          <p style="font-weight:700;font-size:1.05rem">On-site across Aotearoa</p>
-          <p style="font-size:0.95rem;margin-top:0.35rem">Auckland · Wellington · Christchurch · Queenstown</p>
-        </div>
-      </div>
+    <!-- ── MOON BAND: CLIENT VOICE ─────────────────────────────────── -->
+    <section class="moonband" aria-label="What clients say">
+      <figure class="moonband__fig">
+        <span class="moonband__mark" aria-hidden="true">“</span>
+        <blockquote>
+          <p>Peter is fantastic … We had Peter in for a one-day workshop, and it’s fair to say minds were blown (in the best possible way). … Importantly, Peter is completely independent and technology-neutral — no sales pitch, just clear, practical insight.</p>
+        </blockquote>
+        <figcaption><strong>James Lee</strong><span>CEO, FIX Eyewear &amp; MD, Beautyspot</span></figcaption>
+      </figure>
+      <p class="moonband__where"><strong>On-site across Aotearoa</strong> Auckland · Wellington · Christchurch · Queenstown</p>
     </section>
 
     <!-- ── 06 / CODE & WRITING ─────────────────────────────────────── -->
@@ -2167,13 +2208,15 @@ return {goTo(i){const[x,y]=CARDS[i].at;go(x,y)},setActive(i){active=i;dirty=true
     }, { rootMargin: "-45% 0px -52% 0px" });
     document.querySelectorAll("[data-sec]").forEach(s => secObs.observe(s));
 
-    // Dawn: the last 40% of the page lifts from night to first light.
+    // Sky: night at the top, violet through the middle, first light at the end.
     let dawnQueued = false;
     const setDawn = () => {
       dawnQueued = false;
       const max = document.documentElement.scrollHeight - innerHeight;
       const p = max > 0 ? scrollY / max : 0;
-      document.documentElement.style.setProperty("--dawn", clamp((p - 0.6) / 0.4).toFixed(3));
+      const st = document.documentElement.style;
+      st.setProperty("--sky", clamp(p).toFixed(3));
+      st.setProperty("--dawn", Math.pow(clamp((p - 0.38) / 0.62), 1.5).toFixed(3));
     };
     addEventListener("scroll", () => { if (!dawnQueued) { dawnQueued = true; requestAnimationFrame(setDawn); } }, { passive: true });
     addEventListener("resize", setDawn);
