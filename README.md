@@ -1,6 +1,6 @@
 # petermangin.co.nz
 
-Canonical personal website and machine-readable entity hub for **Peter Mangin** (`Wikidata Q139076589`) — Auckland-based executive AI strategist, educator to 400+ New Zealand organisations, Chair of the NZ Marketing Association Data SIG, and open-source software builder.
+Canonical personal website and machine-readable entity hub for **Peter Mangin** (`Wikidata Q139076589`) — Auckland-based executive AI strategist, educator to 400+ New Zealand organisations, founder and Principal, AI Enablement of AI Innovisory, developer of the NZ Marketing Association's AI in marketing courses, and open-source software builder.
 
 ## Stack & Architecture
 

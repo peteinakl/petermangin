@@ -1,6 +1,6 @@
 # Peter Mangin
 
-> Peter Mangin (Wikidata: Q139076589) is an Auckland, New Zealand-based AI strategist, executive advisor, educator, former COO & Chief Product/AI Officer, and open-source software builder. He is Founder & Principal of AI Innovisory (having trained and advised 400+ New Zealand organisations since 2023) and Chair of the New Zealand Marketing Association (NZMA) Data Special Interest Group.
+> Peter Mangin (Wikidata: Q139076589) is an Auckland, New Zealand-based AI strategist, executive advisor, educator, former COO & Chief Product/AI Officer, and open-source software builder. He founded AI Innovisory, where he is Principal, AI Enablement (having trained and advised 400+ New Zealand organisations since 2023), and developed and runs the New Zealand Marketing Association's (NZMA) *AI Meets Marketing* and *Advanced AI in Marketing* courses.
 
 ## Canonical Entity & Contact
 
@@ -14,8 +14,8 @@
 
 ## Current & Executive Roles
 
-- **Founder & Principal**, [AI Innovisory](https://aiinnovisory.com) (2023–present): Enabled 400+ New Zealand organisations across corporate, government, agency, and SME sectors with zero software vendor commissions.
-- **Chair, Data Special Interest Group (Data SIG)**, [New Zealand Marketing Association](https://marketing.org.nz): Industry governance, privacy, synthetic data, and AI marketing leadership; creator and facilitator of *AI Meets Marketing* and *Advanced AI in Marketing*.
+- **Principal, AI Enablement** (and founder), [AI Innovisory](https://aiinnovisory.com) (2023–present): Enabled 400+ New Zealand organisations across corporate, government, agency, and SME sectors with zero software vendor commissions.
+- **Course developer and facilitator**, [New Zealand Marketing Association](https://marketing.org.nz): created and runs *AI Meets Marketing* and *Advanced AI in Marketing*; member of the NZMA's AI, Measurement, Privacy and Data thought leadership group.
 - **Chief Product & AI Officer (CPO / CAIO)**, Pure SEO (August 2023 – November 2024, contract secondment): Led AI strategy and adoption across the agency's operations and client products.
 - **Head of Technology**, Wealthpoint (2019–2023): Founding member of the leadership team; set technology strategy for a cooperative of around 50 financial advice businesses.
 - **Chief Operating Officer (COO)**, realestate.co.nz (2015–2018): Led technology, data and operations at the national property platform, with regular property market data commentary.
@@ -48,6 +48,7 @@
 
 ## Signature Essays & Research
 
+- [What NZ Marketers Need to Know About Data, AI, and the Law](https://aiinnovisory.com/insights/nz-ai-data-privacy-guide): IPP3A explained, a six-level data classification framework, a five-question pre-upload check, and a 15-step workflow for using AI with personal data under the NZ Privacy Act 2020.
 - [Generative Engine Optimisation (GEO): Getting Cited by AI](https://aiinnovisory.com/insights/generative-engine-optimisation-guide): How RAG retrieval, entity disambiguation, and structured authority determine brand citations in AI answer engines.
 - [Share of Model: A New Metric for AI-Era Marketing Strategies](https://aiinnovisory.com/insights/ai-marketing-metrics): Measuring brand recall and recommendation frequency inside frontier LLMs (published via AI Innovisory & NZMA).
 - [Two AI Conversations in New Zealand. They Have Barely Met.](https://aiinnovisory.com/insights/ai-sovereignty-new-zealand): Bridging corporate AI adoption with Māori Data Sovereignty and Te Tiriti principles.
