@@ -48,11 +48,11 @@
 
 ## Signature Essays & Research
 
-- [Generative Engine Optimisation (GEO): Getting Cited by AI](https://aiinnovisory.com/insights): How RAG retrieval, entity disambiguation, and structured authority determine brand citations in AI answer engines.
-- [Share of Model: A New Metric for AI-Era Marketing Strategies](https://aiinnovisory.com/insights): Measuring brand recall and recommendation frequency inside frontier LLMs (published via AI Innovisory & NZMA).
-- [Two AI Conversations in New Zealand. They Have Barely Met.](https://aiinnovisory.com/insights): Bridging corporate AI adoption with Māori Data Sovereignty and Te Tiriti principles.
-- [Your AI Policy Describes a Company That Doesn't Exist Anymore](https://aiinnovisory.com/insights): Reframing shadow AI from employee misconduct to governance and tooling design failure.
-- [AI Sounds Confident. That Doesn't Make It Right.](https://aiinnovisory.com/insights): Three assumption checks and seven verification checks for executive decision-makers.
+- [Generative Engine Optimisation (GEO): Getting Cited by AI](https://aiinnovisory.com/insights/generative-engine-optimisation-guide): How RAG retrieval, entity disambiguation, and structured authority determine brand citations in AI answer engines.
+- [Share of Model: A New Metric for AI-Era Marketing Strategies](https://aiinnovisory.com/insights/ai-marketing-metrics): Measuring brand recall and recommendation frequency inside frontier LLMs (published via AI Innovisory & NZMA).
+- [Two AI Conversations in New Zealand. They Have Barely Met.](https://aiinnovisory.com/insights/ai-sovereignty-new-zealand): Bridging corporate AI adoption with Māori Data Sovereignty and Te Tiriti principles.
+- [Your AI Policy Describes a Company That Doesn't Exist Anymore](https://aiinnovisory.com/insights/nz-ai-policy-guide): Reframing shadow AI from employee misconduct to governance and tooling design failure.
+- [AI Sounds Confident. That Doesn't Make It Right.](https://aiinnovisory.com/insights/verify-ai-analysis): Three assumption checks and seven verification checks for executive decision-makers.
 
 ## Verified Profiles
 
