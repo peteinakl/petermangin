@@ -84,7 +84,7 @@
         "description": "Peter Mangin is an Auckland-based AI strategist, Founder of AI Innovisory (400+ NZ organisations enabled), developer of the NZMA's AI in marketing courses, former COO of realestate.co.nz & CPO/CAIO at Pure SEO, and open-source builder.",
         "inLanguage": "en-NZ",
         "datePublished": "2026-11-04",
-        "dateModified": "2026-11-13",
+        "dateModified": "2026-11-27",
         "isPartOf": { "@id": "https://www.petermangin.co.nz/#website" },
         "mainEntity": { "@id": "https://www.petermangin.co.nz/#person" },
         "about": { "@id": "https://www.petermangin.co.nz/#person" },
@@ -855,6 +855,12 @@
     .rung-diag__k { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--amber); }
     .rung-diag__v { font-size: 0.96rem; line-height: 1.42; color: var(--moon); }
     .rung-diag__v strong { color: var(--amber); }
+    .rung-diag__cta {
+      grid-column: 1 / -1; justify-self: start; margin-top: 0.15rem;
+      font: 700 0.92rem/1.2 var(--font); color: var(--amber); text-decoration-color: rgba(255, 182, 92, 0.55);
+      transition: color 0.2s;
+    }
+    .rung-diag__cta:hover { color: var(--moon); }
 
     /* 05 Stage */
     .stage { background: var(--shallow); }
@@ -948,7 +954,7 @@
     }
     .lineage__lead { font: 500 clamp(1.5rem, 1.1rem + 1.5vw, 2.3rem)/1.18 var(--font); letter-spacing: -0.02em; max-width: 30ch; }
     .brut-card {
-      background: var(--night); color: var(--moon); border-radius: 14px;
+      background: var(--night); color: var(--moon); border-radius: 14px; min-width: 0;
       padding: 1.4rem 1.5rem; display: grid; gap: 0.6rem;
       transition: transform 0.4s var(--ease-pop), box-shadow 0.3s;
     }
@@ -992,7 +998,13 @@
       font-size: 0.82rem; line-height: 1.35; color: var(--moon-soft);
     }
     .geo-viz__inspector code { color: var(--amber); font-weight: 600; }
-    .geo-viz__hint { font-size: 0.75rem; color: var(--periwinkle); font-weight: 600; }
+    .geo-viz__link {
+      display: inline-flex; align-items: center; padding: 0.25rem 0.6rem; border-radius: 999px;
+      border: 1.5px solid var(--periwinkle); color: var(--periwinkle); text-decoration: none;
+      font: 700 0.76rem/1 var(--font); white-space: nowrap;
+      transition: background-color 0.18s, color 0.18s;
+    }
+    .geo-viz__link:hover { background: var(--periwinkle); color: var(--night); }
 
     /* Night-to-Dawn Vertical Journey Rail */
     .sky-rail {
@@ -1050,9 +1062,9 @@
       background: none; border: 0; color: var(--moon); cursor: pointer;
       font: 600 0.95rem/1.25 var(--font); transition: background-color 0.15s, color 0.15s;
     }
-    .cmd-item:hover, .cmd-item:focus-visible { background: var(--amber); color: var(--night); outline: none; }
+    .cmd-item:hover, .cmd-item:focus-visible, .cmd-item.is-sel { background: var(--amber); color: var(--night); outline: none; }
     .cmd-item__sub { font-size: 0.8rem; font-weight: 500; color: var(--moon-soft); }
-    .cmd-item:hover .cmd-item__sub, .cmd-item:focus-visible .cmd-item__sub { color: var(--night); opacity: 0.85; }
+    .cmd-item:hover .cmd-item__sub, .cmd-item:focus-visible .cmd-item__sub, .cmd-item.is-sel .cmd-item__sub { color: var(--night); opacity: 0.85; }
 
     /* 08 Toolkit */
     .kit__grid {
@@ -1173,13 +1185,13 @@
     }
     @media (max-width: 900px) {
       .about__grid, .innovisory__grid, .proof__top, .code__grid, .lineage__grid, .kit__grid, .faq-grid, .press, .talk {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
       }
       .metric-bar { grid-template-columns: 1fr auto; gap: 0.35rem 1rem; }
       .metric-bar__track { grid-column: 1 / -1; grid-row: 2; }
       .stats { grid-template-columns: repeat(2, 1fr); }
       .doors { grid-template-columns: 1fr; }
-      .bar__nav { display: none; }
+      .bar__nav, .bar__cmd { display: none; }
       .bar { justify-content: space-between; }
     }
     @media (max-width: 820px) {
@@ -1433,27 +1445,27 @@
       <p class="proof__cite mono">Source: self-reported task-level estimates from AI Innovisory workshop and advisory participants, 2023–2026. Not an independent study.</p>
 
       <ol class="rungs-cards" aria-label="The 5-Rung AI Adoption Ladder">
-        <li class="rung-card is-active">
+        <li class="rung-card is-active" tabindex="0" role="button" aria-pressed="true">
           <p class="rung-card__num">Rung 01</p>
           <h3 class="rung-card__title">Shadow Experimentation</h3>
           <p class="rung-card__desc">Staff paste data into free consumer tools privately; wins stay siloed and IPP3A risk goes unmapped.</p>
         </li>
-        <li class="rung-card">
+        <li class="rung-card" tabindex="0" role="button" aria-pressed="false">
           <p class="rung-card__num">Rung 02</p>
           <h3 class="rung-card__title">Guided Capability</h3>
           <p class="rung-card__desc">Safe enterprise platforms paired with hands-on role training and clear 4-principle data hygiene.</p>
         </li>
-        <li class="rung-card">
+        <li class="rung-card" tabindex="0" role="button" aria-pressed="false">
           <p class="rung-card__num">Rung 03</p>
           <h3 class="rung-card__title">Shared Workflows</h3>
           <p class="rung-card__desc">Standardised team prompts, base skills, and six-level NZ data classification woven into daily ops.</p>
         </li>
-        <li class="rung-card">
+        <li class="rung-card" tabindex="0" role="button" aria-pressed="false">
           <p class="rung-card__num">Rung 04</p>
           <h3 class="rung-card__title">Process Automation</h3>
           <p class="rung-card__desc">High-friction multi-step tasks automated end-to-end, unlocking 60–80% operational time recovery.</p>
         </li>
-        <li class="rung-card">
+        <li class="rung-card" tabindex="0" role="button" aria-pressed="false">
           <p class="rung-card__num">Rung 05</p>
           <h3 class="rung-card__title">Governed Agentic Scale</h3>
           <p class="rung-card__desc">Spec-driven agents, Māori Data Sovereignty alignment, calibration tracking, and revenue impact.</p>
@@ -1473,6 +1485,7 @@
           <span class="rung-diag__k">Move to Reach the Next Rung</span>
           <p class="rung-diag__v" data-rd-next>Stand up safe enterprise workspaces paired with a four-principle data hygiene baseline and role training.</p>
         </div>
+        <a class="rung-diag__cta" data-rd-cta href="mailto:hello@aiinnovisory.com?subject=Moving%20from%20Rung%2001%20to%20Rung%2002">Talk about moving from Rung 01 → Rung 02 →</a>
       </aside>
     </section>
 
@@ -1775,7 +1788,7 @@
             <canvas class="geo-viz__canvas" data-geo-graph></canvas>
             <div class="geo-viz__inspector">
               <span data-geo-readout><code>#person</code> → <strong>Peter Mangin</strong> · Wikidata Q139076589 (7 linked @graph nodes)</span>
-              <span class="geo-viz__hint">Click or hover nodes</span>
+              <a class="geo-viz__link" data-geo-link href="https://www.wikidata.org/wiki/Q139076589" target="_blank" rel="noopener">Open Wikidata ↗</a>
             </div>
           </div>
 
@@ -1920,7 +1933,6 @@
     const clamp = (v, lo = 0, hi = 1) => Math.max(lo, Math.min(hi, v));
 
     const hero = document.querySelector("[data-hero]");
-    if (location.search.includes("fullshot")) hero.style.height = "920px";
 
     // ── 3. CRAWLER-SAFE NUMBER MOTION: ODOMETER REELS & MAP COORDINATES
     // Motion is reserved for numbers. Never mutate them for search/AI crawlers (Googlebot, GPTBot, ClaudeBot, PerplexityBot)
@@ -2277,6 +2289,7 @@ function layout(){dpr=Math.min(devicePixelRatio||1,2);W=cv.clientWidth;H=cv.clie
  const key=[lookName,a,dpr].join();if(key!==layerKey){buildLayer();layerKey=key}
  placePins();dirty=true}
 function placePins(){if(mob)return;CARDS.forEach((c,i)=>{if(i===4)return;const[x,y]=c.at,z=T[x][y].h,lift=[11,6.6,3.6,3.2][i],p=P(x+.5,y+.5,z+lift),b=WRAPS[i];b.style.left=p[0]+"px";b.style.top=(cv.offsetTop+p[1])+"px"})}
+let hoverRoute=null;
 function drawHoverRoute(t){
  if(!hover||blocked(hover[0],hover[1])||me.route.length)return;
  const[hx,hy]=hover,hz=T[hx][hy].h,d=Math.hypot(hx-me.x,hy-me.y);
@@ -2287,9 +2300,8 @@ function drawHoverRoute(t){
  if(d>19){
   g.setLineDash([4,5]);g.strokeStyle="rgba(127,166,255,0.75)";g.lineWidth=1.8;
   g.beginPath();g.moveTo(A[0],A[1]-8);g.quadraticCurveTo((A[0]+B[0])/2,Math.min(A[1],B[1])-a*3.5,B[0],B[1]);g.stroke();
- }else{
-  const r=path([Math.round(me.x),Math.round(me.y)],[hx,hy]);
-  if(r&&r.length>1){g.setLineDash([3,5]);g.strokeStyle="rgba(255,182,92,0.75)";g.lineWidth=1.7;g.beginPath();r.forEach(([rx,ry],i)=>{const c=at(rx,ry),p=P(rx+.5,ry+.5,c&&c.k!=="s"?c.h:0);i?g.lineTo(p[0],p[1]):g.moveTo(p[0],p[1])});g.stroke()}
+ }else if(hoverRoute&&hoverRoute.length>1){
+  g.setLineDash([3,5]);g.strokeStyle="rgba(255,182,92,0.75)";g.lineWidth=1.7;g.beginPath();hoverRoute.forEach(([rx,ry],i)=>{const c=at(rx,ry),p=P(rx+.5,ry+.5,c&&c.k!=="s"?c.h:0);i?g.lineTo(p[0],p[1]):g.moveTo(p[0],p[1])});g.stroke();
  }
  g.setLineDash([]);
  const pulse=reduced?5:4+Math.sin(t*6)*2;
@@ -2313,8 +2325,8 @@ function go(x,y){const s0=[Math.round(me.x),Math.round(me.y)],d=Math.hypot(x-me.
 function arrive(){const X=Math.round(me.x),Y=Math.round(me.y);CARDS.forEach((c,i)=>{if(Math.abs(c.at[0]-X)+Math.abs(c.at[1]-Y)<=1&&active!==i)activate(i)})}
 function pick(e){const r=cv.getBoundingClientRect(),mx=e.clientX-r.left-ox,my=e.clientY-r.top-oy,u=(mx/a+2*my/a)/2,v=(2*my/a-mx/a)/2;let best=null;for(const h of[1,2]){const X=Math.floor(u+h*.36),Y=Math.floor(v+h*.36),c=at(X,Y);if(c&&c.h===h&&!blocked(X,Y))best=[X,Y]}if(!best){const X=Math.floor(u),Y=Math.floor(v);if(!blocked(X,Y))best=[X,Y]}return best}
 for(const[e,v]of[["pointerenter",true],["pointerleave",false],["focusin",true],["focusout",false]])WRAPS[4].addEventListener(e,()=>{satHold=v});
-cv.addEventListener("pointermove",e=>{if(e.pointerType==="touch")return;const p=pick(e);if(String(p)!==String(hover)){hover=p;dirty=true}});
-cv.addEventListener("pointerleave",()=>{hover=null;dirty=true});
+cv.addEventListener("pointermove",e=>{if(e.pointerType==="touch")return;const p=pick(e);if(String(p)!==String(hover)){hover=p;hoverRoute=p&&!me.route.length&&Math.hypot(p[0]-me.x,p[1]-me.y)<=19?path([Math.round(me.x),Math.round(me.y)],p):null;dirty=true}});
+cv.addEventListener("pointerleave",()=>{hover=null;hoverRoute=null;dirty=true});
 cv.addEventListener("click",e=>{const p=pick(e);if(p)go(p[0],p[1])});
 cv.addEventListener("keydown",e=>{const d={ArrowUp:[0,-1],ArrowDown:[0,1],ArrowLeft:[-1,0],ArrowRight:[1,0]}[e.key];if(!d)return;e.preventDefault();const X=Math.round(me.x)+d[0],Y=Math.round(me.y)+d[1];if(!blocked(X,Y)&&!me.route.length){sfx.unlock();sfx.ride(null);me.mode="walk";me.route=[[X,Y]];dirty=true}});
 function loop(ms){const t=ms/1000,dt=Math.min(.05,t-last);last=t;
@@ -2440,35 +2452,55 @@ return {goTo(i){const[x,y]=CARDS[i].at;go(x,y)},setActive(i){active=i;dirty=true
     const rdReal = document.querySelector("[data-rd-real]");
     const rdGov = document.querySelector("[data-rd-gov]");
     const rdNext = document.querySelector("[data-rd-next]");
+    const rdCta = document.querySelector("[data-rd-cta]");
+    const RUNG_CTA = [
+      { label: "Talk about moving from Rung 01 → Rung 02 →", subj: "Moving from Rung 01 to Rung 02" },
+      { label: "Talk about moving from Rung 02 → Rung 03 →", subj: "Moving from Rung 02 to Rung 03" },
+      { label: "Talk about moving from Rung 03 → Rung 04 →", subj: "Moving from Rung 03 to Rung 04" },
+      { label: "Talk about moving from Rung 04 → Rung 05 →", subj: "Moving from Rung 04 to Rung 05" },
+      { label: "Discuss Fractional CAIO & agentic scale →", subj: "Fractional CAIO & Rung 05 governance" }
+    ];
     function selectRung(idx, playSound = true) {
       window.__activeRung = idx;
       if (playSound) sfx.blip(idx * 3);
-      rungCards.forEach((c, i) => c.classList.toggle("is-active", i === idx));
+      rungCards.forEach((c, i) => {
+        c.classList.toggle("is-active", i === idx);
+        c.setAttribute("aria-pressed", String(i === idx));
+      });
       const d = RUNG_DATA[idx] || RUNG_DATA[0];
+      const cta = RUNG_CTA[idx] || RUNG_CTA[0];
       if (rdStage) rdStage.textContent = d.stage;
       if (rdReal) rdReal.innerHTML = d.real;
       if (rdGov) rdGov.textContent = d.gov;
       if (rdNext) rdNext.textContent = d.next;
+      if (rdCta) {
+        rdCta.textContent = cta.label;
+        rdCta.href = `mailto:hello@aiinnovisory.com?subject=${encodeURIComponent(cta.subj)}`;
+      }
       if (world && world.redrawLandmarks) world.redrawLandmarks();
     }
     rungCards.forEach((rc, idx) => {
       rc.addEventListener("click", () => selectRung(idx, true));
+      rc.addEventListener("keydown", e => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); selectRung(idx, true); }
+      });
     });
 
     // ── 6B. INTERACTIVE GEO ENTITY CONSTELLATION GRAPH (#lineage)
     (() => {
       const gcv = document.querySelector("[data-geo-graph]");
       const readout = document.querySelector("[data-geo-readout]");
+      const geoLink = document.querySelector("[data-geo-link]");
       if (!gcv) return;
       const ctx = gcv.getContext("2d");
       const NODES = [
-        { id: "#person", label: "Peter Mangin", sub: "Wikidata Q139076589 · Canonical Root", col: "#FFB65C", r: 19, x: 0.5, y: 0.5, url: "https://www.wikidata.org/wiki/Q139076589" },
-        { id: "#ai-innovisory", label: "AI Innovisory", sub: "ProfessionalService · 400+ NZ orgs enabled", col: "#FF8A65", r: 13, a: -0.55, d: 0.35, url: "https://aiinnovisory.com" },
-        { id: "#nzma", label: "NZMA Courses", sub: "AI Meets Marketing & Advanced AI", col: "#FFB65C", r: 12, a: 0.45, d: 0.35, url: "https://marketing.org.nz" },
-        { id: "#c-suite", label: "C-Suite Lineage", sub: "COO realestate.co.nz · CIO Saatchi · CPO Pure SEO", col: "#F6EBD5", r: 12, a: 1.55, d: 0.34, url: "#about" },
-        { id: "#featured-work", label: "60 GitHub Repos", sub: "consequence-engine · looking-up · ak-live", col: "#7FA6FF", r: 13, a: 2.6, d: 0.36, url: "https://github.com/peteinakl" },
-        { id: "#insights", label: "GEO & IPP3A Essays", sub: "Share of Model · Sovereignty · NZ Privacy Law", col: "#F48FB1", r: 12, a: -2.55, d: 0.36, url: "https://aiinnovisory.com/insights" },
-        { id: "#llms-txt", label: "llms.txt & @graph", sub: "Machine-readable RAG & FAQPage endpoints", col: "#7FA6FF", r: 11, a: -1.55, d: 0.33, url: "/llms.txt" }
+        { id: "#person", label: "Peter Mangin", sub: "Wikidata Q139076589 · Canonical Root", col: "#FFB65C", r: 19, x: 0.5, y: 0.5, url: "https://www.wikidata.org/wiki/Q139076589", cta: "Open Wikidata ↗" },
+        { id: "#ai-innovisory", label: "AI Innovisory", sub: "ProfessionalService · 400+ NZ orgs enabled", col: "#FF8A65", r: 13, a: -0.55, d: 0.35, url: "https://aiinnovisory.com", cta: "Open aiinnovisory.com ↗" },
+        { id: "#nzma", label: "NZMA Courses", sub: "AI Meets Marketing & Advanced AI", col: "#FFB65C", r: 12, a: 0.45, d: 0.35, url: "https://marketing.org.nz", cta: "Open marketing.org.nz ↗" },
+        { id: "#c-suite", label: "C-Suite Lineage", sub: "COO realestate.co.nz · CIO Saatchi · CPO Pure SEO", col: "#F6EBD5", r: 12, a: 1.55, d: 0.34, url: "#about", cta: "Jump to The Arc ↓" },
+        { id: "#featured-work", label: "60 GitHub Repos", sub: "consequence-engine · looking-up · ak-live", col: "#7FA6FF", r: 13, a: 2.6, d: 0.36, url: "https://github.com/peteinakl", cta: "Open GitHub ↗" },
+        { id: "#insights", label: "GEO & IPP3A Essays", sub: "Share of Model · Sovereignty · NZ Privacy Law", col: "#F48FB1", r: 12, a: -2.55, d: 0.36, url: "https://aiinnovisory.com/insights", cta: "Read Insights ↗" },
+        { id: "#llms-txt", label: "llms.txt & @graph", sub: "Machine-readable RAG & FAQPage endpoints", col: "#7FA6FF", r: 11, a: -1.55, d: 0.33, url: "/llms.txt", cta: "Open llms.txt ↗" }
       ];
       let sel = 0, hov = -1, gw = 0, gh = 0, gdpr = 1, gVis = false;
       const syncGeo = () => {
@@ -2488,6 +2520,12 @@ return {goTo(i){const[x,y]=CARDS[i].at;go(x,y)},setActive(i){active=i;dirty=true
         sel = idx;
         const n = NODES[idx];
         if (readout) readout.innerHTML = `<code>${n.id}</code> → <strong>${n.label}</strong> · ${n.sub}`;
+        if (geoLink) {
+          geoLink.textContent = n.cta;
+          geoLink.href = n.url;
+          if (n.url.startsWith("#")) { geoLink.removeAttribute("target"); geoLink.removeAttribute("rel"); }
+          else { geoLink.setAttribute("target", "_blank"); geoLink.setAttribute("rel", "noopener"); }
+        }
       };
       const pickNode = (e, t) => {
         const r = gcv.getBoundingClientRect();
@@ -2652,14 +2690,27 @@ return {goTo(i){const[x,y]=CARDS[i].at;go(x,y)},setActive(i){active=i;dirty=true
         { label: "Open Full Machine Dossier (/llms-full.txt)", sub: "GEO · View full RAG reference dossier", run: () => window.open("/llms-full.txt", "_blank") },
         { label: "Toggle 8-Bit Chiptune Sound Effects", sub: "Web Audio API synthesiser on/off", run: () => { const b = document.querySelector(".snd"); if (b) b.click(); } }
       ];
+      let activeCmdIdx = 0;
+      const highlightCmd = idx => {
+        const items = [...list.querySelectorAll(".cmd-item")];
+        if (!items.length) return;
+        activeCmdIdx = ((idx % items.length) + items.length) % items.length;
+        items.forEach((el, i) => {
+          const on = i === activeCmdIdx;
+          el.classList.toggle("is-sel", on);
+          if (on) el.scrollIntoView({ block: "nearest" });
+        });
+      };
       const renderCmds = q => {
         const term = q.trim().toLowerCase();
         list.innerHTML = "";
-        CMDS.filter(c => !term || c.label.toLowerCase().includes(term) || c.sub.toLowerCase().includes(term)).forEach(c => {
+        activeCmdIdx = 0;
+        CMDS.filter(c => !term || c.label.toLowerCase().includes(term) || c.sub.toLowerCase().includes(term)).forEach((c, i) => {
           const b = document.createElement("button");
-          b.type = "button"; b.className = "cmd-item";
+          b.type = "button"; b.className = "cmd-item" + (i === 0 ? " is-sel" : "");
           b.innerHTML = `<span>${c.label}</span><span class="cmd-item__sub">${c.sub}</span>`;
           b.addEventListener("click", () => { sfx.blip(4); modal.close(); c.run(); });
+          b.addEventListener("pointerenter", () => highlightCmd(i));
           list.append(b);
         });
       };
@@ -2674,6 +2725,14 @@ return {goTo(i){const[x,y]=CARDS[i].at;go(x,y)},setActive(i){active=i;dirty=true
       if (closeBtn) closeBtn.addEventListener("click", () => modal.close());
       modal.addEventListener("click", e => { if (e.target === modal) modal.close(); });
       input.addEventListener("input", () => renderCmds(input.value));
+      input.addEventListener("keydown", e => {
+        if (e.key === "ArrowDown") { e.preventDefault(); highlightCmd(activeCmdIdx + 1); }
+        else if (e.key === "ArrowUp") { e.preventDefault(); highlightCmd(activeCmdIdx - 1); }
+        else if (e.key === "Enter") {
+          const activeEl = list.querySelector(".cmd-item.is-sel") || list.querySelector(".cmd-item");
+          if (activeEl) { e.preventDefault(); activeEl.click(); }
+        }
+      });
       addEventListener("keydown", e => {
         if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
           e.preventDefault();
