@@ -857,17 +857,20 @@
       display: grid; grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: clamp(0.5rem, 0.9vw, 0.8rem); align-items: end;
     }
+    .rungs-cards > li { display: flex; }
     .rung-card {
+      flex: 1; width: 100%; border: 0; margin: 0; font: inherit; color: inherit; text-align: left;
       background: var(--lamp-card); box-shadow: inset 0 0 0 1px var(--hair); border-radius: 10px;
       padding: 1.05rem 1rem 1.15rem; display: flex; flex-direction: column; gap: 0.35rem;
       transition: transform 0.4s var(--ease-pop), background-color 0.25s, color 0.25s, box-shadow 0.25s;
       cursor: pointer;
     }
-    .rung-card:nth-child(1) { margin-bottom: 0; }
-    .rung-card:nth-child(2) { margin-bottom: 2.4rem; }
-    .rung-card:nth-child(3) { margin-bottom: 4.8rem; }
-    .rung-card:nth-child(4) { margin-bottom: 7.2rem; }
-    .rung-card:nth-child(5) { margin-bottom: 9.6rem; }
+    .rung-card > span { display: block; }
+    .rungs-cards > li:nth-child(1) { margin-bottom: 0; }
+    .rungs-cards > li:nth-child(2) { margin-bottom: 2.4rem; }
+    .rungs-cards > li:nth-child(3) { margin-bottom: 4.8rem; }
+    .rungs-cards > li:nth-child(4) { margin-bottom: 7.2rem; }
+    .rungs-cards > li:nth-child(5) { margin-bottom: 9.6rem; }
     .rung-card:hover, .rung-card.is-active {
       background: var(--amber); color: var(--night); transform: translateY(-6px);
       box-shadow: 0 0 34px rgba(255, 182, 92, 0.4);
@@ -1212,7 +1215,7 @@
     @media (max-width: 1100px) {
       .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .rungs-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; }
-      .rung-card:nth-child(n) { margin-bottom: 0; }
+      .rungs-cards > li:nth-child(n) { margin-bottom: 0; }
       .rung-diag { grid-template-columns: 1fr; }
     }
     @media (max-width: 900px) {
@@ -1477,30 +1480,40 @@
       <p class="proof__cite mono">Source: self-reported task-level estimates from AI Innovisory workshop and advisory participants, 2023–2026. Not an independent study.</p>
 
       <ol class="rungs-cards" aria-label="The 5-Rung AI Adoption Ladder">
-        <li class="rung-card is-active" tabindex="0" role="button" aria-pressed="true">
-          <p class="rung-card__num">Rung 01</p>
-          <h3 class="rung-card__title">Shadow Experimentation</h3>
-          <p class="rung-card__desc">Staff paste data into free consumer tools privately; wins stay siloed and IPP3A risk goes unmapped.</p>
+        <li>
+          <button type="button" class="rung-card is-active" aria-pressed="true">
+            <span class="rung-card__num">Rung 01</span>
+            <span class="rung-card__title">Shadow Experimentation</span>
+            <span class="rung-card__desc">Staff paste data into free consumer tools privately; wins stay siloed and IPP3A risk goes unmapped.</span>
+          </button>
         </li>
-        <li class="rung-card" tabindex="0" role="button" aria-pressed="false">
-          <p class="rung-card__num">Rung 02</p>
-          <h3 class="rung-card__title">Guided Capability</h3>
-          <p class="rung-card__desc">Safe enterprise platforms paired with hands-on role training and clear 4-principle data hygiene.</p>
+        <li>
+          <button type="button" class="rung-card" aria-pressed="false">
+            <span class="rung-card__num">Rung 02</span>
+            <span class="rung-card__title">Guided Capability</span>
+            <span class="rung-card__desc">Safe enterprise platforms paired with hands-on role training and clear 4-principle data hygiene.</span>
+          </button>
         </li>
-        <li class="rung-card" tabindex="0" role="button" aria-pressed="false">
-          <p class="rung-card__num">Rung 03</p>
-          <h3 class="rung-card__title">Shared Workflows</h3>
-          <p class="rung-card__desc">Standardised team prompts, base skills, and six-level NZ data classification woven into daily ops.</p>
+        <li>
+          <button type="button" class="rung-card" aria-pressed="false">
+            <span class="rung-card__num">Rung 03</span>
+            <span class="rung-card__title">Shared Workflows</span>
+            <span class="rung-card__desc">Standardised team prompts, base skills, and six-level NZ data classification woven into daily ops.</span>
+          </button>
         </li>
-        <li class="rung-card" tabindex="0" role="button" aria-pressed="false">
-          <p class="rung-card__num">Rung 04</p>
-          <h3 class="rung-card__title">Process Automation</h3>
-          <p class="rung-card__desc">High-friction multi-step tasks automated end-to-end, unlocking 60–80% operational time recovery.</p>
+        <li>
+          <button type="button" class="rung-card" aria-pressed="false">
+            <span class="rung-card__num">Rung 04</span>
+            <span class="rung-card__title">Process Automation</span>
+            <span class="rung-card__desc">High-friction multi-step tasks automated end-to-end, unlocking 60–80% operational time recovery.</span>
+          </button>
         </li>
-        <li class="rung-card" tabindex="0" role="button" aria-pressed="false">
-          <p class="rung-card__num">Rung 05</p>
-          <h3 class="rung-card__title">Governed Agentic Scale</h3>
-          <p class="rung-card__desc">Spec-driven agents, Māori Data Sovereignty alignment, calibration tracking, and revenue impact.</p>
+        <li>
+          <button type="button" class="rung-card" aria-pressed="false">
+            <span class="rung-card__num">Rung 05</span>
+            <span class="rung-card__title">Governed Agentic Scale</span>
+            <span class="rung-card__desc">Spec-driven agents, Māori Data Sovereignty alignment, calibration tracking, and revenue impact.</span>
+          </button>
         </li>
       </ol>
 
@@ -2513,9 +2526,6 @@ return {goTo(i){const[x,y]=CARDS[i].at;go(x,y)},setActive(i){active=i;dirty=true
     }
     rungCards.forEach((rc, idx) => {
       rc.addEventListener("click", () => selectRung(idx, true));
-      rc.addEventListener("keydown", e => {
-        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); selectRung(idx, true); }
-      });
     });
 
     // ── 6B. INTERACTIVE GEO ENTITY CONSTELLATION GRAPH (#lineage)
