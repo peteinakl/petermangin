@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "petermangin",
+  "main": "worker.js",
+  "compatibility_date": "2026-11-27",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS",
+    // Only the PostHog relay runs code; every other path is served straight from assets.
+    "run_worker_first": ["/rly", "/rly/*"]
+  }
+}

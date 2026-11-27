@@ -13,11 +13,33 @@
     gtag('config', 'G-7WCMRD0RZY');
   </script>
 
-  <!-- PostHog (org: petermangin, project 773054, US Cloud) -->
+  <!-- PostHog (org: petermangin, project 773054, US Cloud), relayed through /rly on this domain. -->
+  <script>
+    // Blocklists match PostHog's request paths (/i/v0/e/, posthog-recorder.js, …) on any host,
+    // so relay URLs are sent as /rly/z/<base64 path>; worker.js decodes them. Other URLs pass untouched.
+    (() => {
+      const P = location.origin + "/rly/";
+      const enc = u => {
+        try {
+          const abs = new URL(String(u), location.href).href;
+          if (!abs.startsWith(P) || abs.startsWith(P + "z/")) return u;
+          return P + "z/" + btoa(abs.slice(P.length - 1)).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+        } catch (_) { return u; }
+      };
+      const f = window.fetch;
+      window.fetch = (input, init) => f.call(window, typeof input === "string" || input instanceof URL ? enc(input) : input, init);
+      const xo = XMLHttpRequest.prototype.open;
+      XMLHttpRequest.prototype.open = function (m, u, ...rest) { return xo.call(this, m, enc(u), ...rest); };
+      if (navigator.sendBeacon) { const sb = navigator.sendBeacon.bind(navigator); navigator.sendBeacon = (u, d) => sb(enc(u), d); }
+      const src = Object.getOwnPropertyDescriptor(HTMLScriptElement.prototype, "src");
+      Object.defineProperty(HTMLScriptElement.prototype, "src", { ...src, set(v) { src.set.call(this, enc(v)); } });
+    })();
+  </script>
   <script>
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
     posthog.init('phc_zvYfJKZwApe6WvBA8JhYhffkKJ3AvFztBE5SMoQ7Nwxy', {
-      api_host: 'https://us.i.posthog.com',
+      api_host: '/rly',
+      ui_host: 'https://us.posthog.com',
       defaults: '2025-05-24',
       person_profiles: 'identified_only'
     });
@@ -2764,6 +2786,162 @@ return {goTo(i){const[x,y]=CARDS[i].at;go(x,y)},setActive(i){active=i;dirty=true
     addEventListener("scroll", () => { if (!dawnQueued) { dawnQueued = true; requestAnimationFrame(setDawn); } }, { passive: true });
     addEventListener("resize", setDawn);
     setDawn();
+  </script>
+
+  <!-- PostHog engagement events: which topics and page elements people use. -->
+  <script>
+    (() => {
+      if (!window.posthog) return;
+      const BEACON = { transport: "sendBeacon" };
+      const ph = (event, props, opts) => { try { posthog.capture(event, props, opts); } catch (_) {} };
+      const txt = el => (el ? el.textContent.replace(/\s+/g, " ").trim().slice(0, 140) : null);
+
+      // ?ph_internal=1 tags this browser as internal traffic (=0 clears it).
+      const qs = new URLSearchParams(location.search);
+      if (qs.has("ph_internal")) posthog.register({ is_internal: qs.get("ph_internal") !== "0" });
+
+      // Sections, in page order. Time counts while a section crosses the middle of the viewport.
+      const SECTIONS = [
+        ["#top", "Hero map"], ["section.ticker", "Ticker"], ["#innovisory", "Innovisory"],
+        ["#proof", "Proof & ladder"], ["section.moonband", "Testimonials"], ["#about", "About"],
+        ["#work", "Work"], ["#stage", "Rooms"], ["#code", "Code & writing"],
+        ["#lineage", "GEO graph"], ["#faq", "FAQ"], ["#contact", "Contact"]
+      ];
+      const state = new Map();
+      SECTIONS.forEach(([sel, name], index) => {
+        const el = document.querySelector(sel);
+        if (el) state.set(el, { name, index, ms: 0, total: 0, since: null, inBand: false, read: false });
+      });
+      const secOf = el => {
+        let s = el.closest("section");
+        while (s && !state.has(s)) s = s.parentElement && s.parentElement.closest("section");
+        if (s) return state.get(s).name;
+        if (el.closest("header.bar")) return "Header";
+        if (el.closest(".sky-rail")) return "Sky rail";
+        if (el.closest("dialog")) return "Command palette";
+        if (el.closest("footer")) return "Footer";
+        return "Other";
+      };
+      const shown = () => document.visibilityState === "visible";
+      const io = new IntersectionObserver(entries => {
+        const t = performance.now();
+        entries.forEach(en => {
+          const s = state.get(en.target);
+          s.inBand = en.isIntersecting;
+          if (en.isIntersecting) { if (s.since === null && shown()) s.since = t; }
+          else if (s.since !== null) { s.ms += t - s.since; s.since = null; }
+        });
+      }, { rootMargin: "-45% 0px -45% 0px" });
+      state.forEach((_, el) => io.observe(el));
+      // A section counts as "read" after 3 seconds in view.
+      setInterval(() => {
+        if (!shown()) return;
+        const t = performance.now();
+        state.forEach(s => {
+          if (s.read || s.since === null) return;
+          if (s.total + s.ms + (t - s.since) >= 3000) { s.read = true; ph("section_read", { section: s.name, section_index: s.index }); }
+        });
+      }, 1000);
+      const flush = () => {
+        const t = performance.now();
+        state.forEach(s => {
+          if (s.since !== null) { s.ms += t - s.since; s.since = null; }
+          if (s.ms >= 500) ph("section_dwell", { section: s.name, section_index: s.index, seconds: Math.round(s.ms / 100) / 10 }, BEACON);
+          s.total += s.ms; s.ms = 0;
+        });
+      };
+      document.addEventListener("visibilitychange", () => {
+        if (!shown()) return flush();
+        const t = performance.now();
+        state.forEach(s => { if (s.inBand) s.since = t; });
+      });
+      addEventListener("pagehide", flush);
+
+      // Clicks: contact links, outbound links, navigation, Work filter, command palette, sound.
+      const cmdModal = document.querySelector("[data-cmd-modal]");
+      const cmdInput = document.querySelector("[data-cmd-input]");
+      let cmdVia = "button", cmdPicked = false, mapVia = "walked";
+      document.addEventListener("click", e => {
+        const t = e.target instanceof Element ? e.target : null;
+        if (!t) return;
+        const a = t.closest("a[href]");
+        if (a) {
+          const href = a.getAttribute("href"), section = secOf(a);
+          if (href.startsWith("mailto:")) {
+            const subject = new URLSearchParams(href.split("?")[1] || "").get("subject") || "(no subject)";
+            ph("contact_clicked", { subject, section, link_text: txt(a) }, BEACON);
+          } else if (href.startsWith("#")) {
+            ph("nav_used", { method: a.closest("header.bar") ? "header" : "in_page_link", target: href, section });
+          } else {
+            const u = new URL(a.href, location.href);
+            ph("outbound_link_clicked", { url: u.origin + u.pathname, domain: u.hostname, link_text: txt(a), section, internal: u.hostname === location.hostname }, BEACON);
+          }
+          return;
+        }
+        const jump = t.closest("[data-jump]");
+        if (jump) return ph("nav_used", { method: "sky_rail", target: jump.dataset.jump, section: "Sky rail" });
+        const f = t.closest("[data-f]");
+        if (f) return ph("work_filter_selected", { filter: txt(f) });
+        const cmd = t.closest(".cmd-item");
+        if (cmd) {
+          cmdPicked = true;
+          const command = txt(cmd.querySelector("span"));
+          if (/Hero World/.test(txt(cmd))) mapVia = "command_palette";
+          return ph("command_palette_used", { command, query: cmdInput && cmdInput.value.trim().slice(0, 100) || null });
+        }
+        if (t.closest("[data-cmd-open]")) cmdVia = "button";
+        const snd = t.closest(".snd");
+        if (snd) setTimeout(() => ph("sound_toggled", { on: snd.getAttribute("aria-pressed") === "true" }), 0);
+        if (t.closest(".pin[data-i]")) mapVia = "pin";
+      }, true);
+
+      // Command palette: how it was opened, and searches that ended without a pick.
+      addEventListener("keydown", e => { if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") cmdVia = "shortcut"; }, true);
+      if (cmdModal) new MutationObserver(() => {
+        if (cmdModal.open) { cmdPicked = false; ph("command_palette_opened", { via: cmdVia }); }
+        else if (!cmdPicked && cmdInput && cmdInput.value.trim()) ph("command_palette_abandoned", { query: cmdInput.value.trim().slice(0, 100) });
+      }).observe(cmdModal, { attributes: true, attributeFilter: ["open"] });
+
+      // Map: which locations open (by pin, by walking, or from the palette), and first walk.
+      const watchPressed = (els, attr, fn) => {
+        const mo = new MutationObserver(ms => ms.forEach(m => {
+          if (m.target.getAttribute(attr) === "true" && m.oldValue !== "true") fn(m.target);
+        }));
+        els.forEach(el => mo.observe(el, { attributes: true, attributeFilter: [attr], attributeOldValue: true }));
+      };
+      watchPressed(document.querySelectorAll(".pin[data-i]"), "aria-expanded", b => {
+        ph("map_location_opened", { location: txt(b.querySelector(".pin__name")), via: mapVia });
+        mapVia = "walked";
+      });
+      const world = document.querySelector(".world");
+      if (world) {
+        let walked = false;
+        const walk = how => { if (!walked) { walked = true; ph("map_walked", { input: how }); } };
+        world.addEventListener("click", () => walk("click"));
+        world.addEventListener("keydown", e => { if (e.key.startsWith("Arrow")) walk("keyboard"); });
+      }
+
+      // 5-Rung ladder: which rung people pick.
+      watchPressed(document.querySelectorAll(".rung-card"), "aria-pressed", c => {
+        ph("rung_selected", { rung: txt(c.querySelector(".rung-card__num")), title: txt(c.querySelector(".rung-card__title")) });
+      });
+
+      // FAQ and other expanders.
+      document.addEventListener("toggle", e => {
+        const d = e.target;
+        if (d.tagName === "DETAILS" && d.open) ph("faq_opened", { question: txt(d.querySelector("summary")), section: secOf(d) });
+      }, true);
+
+      // GEO graph: a click, or hovering for 1.5 seconds.
+      const geo = document.querySelector("[data-geo-graph]");
+      if (geo) {
+        let done = false, timer;
+        const hit = how => { if (!done) { done = true; ph("geo_graph_engaged", { interaction: how }); } };
+        geo.addEventListener("pointerenter", () => { timer = setTimeout(() => hit("hover"), 1500); });
+        geo.addEventListener("pointerleave", () => clearTimeout(timer));
+        geo.addEventListener("pointerdown", () => hit("click"));
+      }
+    })();
   </script>
 </body>
 </html>

@@ -1,0 +1,8 @@
+wrangler.jsonc
+worker.js
+.gitignore
+.playwright-mcp
+design.md
+node_modules
+.git
+.wrangler
